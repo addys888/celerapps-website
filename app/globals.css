@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+/* ─── Tokens ─── */
+:root {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --bg:        #050810;
+  --surface:   #0b0e1a;
+  --elevated:  #10142000;
+  --border:    rgba(255,255,255,0.07);
+  --border-hi: rgba(255,255,255,0.13);
+  --text:      #f1f5f9;
+  --muted:     #94a3b8;
+  --subtle:    #334155;
+  --brand:     #0ea5e9;
+  --indigo:    #6366f1;
+  --green:     #10b981;
+}
+
+/* ─── Base ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: rgba(14,165,233,0.25);
+  border-radius: 99px;
+}
+
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(125deg, #38bdf8 0%, #0ea5e9 35%, #818cf8 75%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #fb923c 0%, #f43f5e 60%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Grid pattern ─── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ─── Glass card ─── */
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ─── Glow ─── */
+.glow-brand {
+  box-shadow: 0 0 0 1px rgba(14,165,233,0.2), 0 8px 40px rgba(14,165,233,0.12);
+}
+.glow-indigo {
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.2), 0 8px 40px rgba(99,102,241,0.12);
+}
+
+/* ─── Shimmer ─── */
+.shimmer-anim {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.045) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* ─── Section spacing ─── */
+.section { padding: 96px 0; }
+
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+}
