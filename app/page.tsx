@@ -16,6 +16,7 @@ export default function HomePage() {
       <Products />
       <WhyCelerApps />
       <HowItWorks />
+      <Pricing />
       <Testimonials />
       <Stats />
       <CTABanner />
