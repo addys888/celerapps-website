@@ -1,34 +1,123 @@
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { Receipt, Mic, Banknote, Clock, Calculator, ShieldCheck, FileText, Smartphone } from "lucide-react";
 
 export const metadata = {
   title: "BillKaro | WhatsApp-First Smart Invoicing by CelerApps",
-  description: "WhatsApp-first smart invoicing and collections. Send invoices and get paid faster.",
+  description: "WhatsApp pe Bill Banao, Paisa Apne Aap Pao. Turn WhatsApp into your invoicing + collection machine.",
 };
 
 export default function BillKaroPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#050810]">
       <Navbar />
-      <div className="flex-1 pt-32 pb-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.1), transparent 50%)" }} />
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 30%, rgba(37, 211, 102, 0.1), transparent 50%)" }} />
         
-        <div className="h-16 w-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-6 relative z-10">
-          <FileText className="h-8 w-8 text-indigo-400" />
+        <div className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 mb-6 relative z-10 tracking-wide uppercase">
+          BillKaro By CelerApps
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight relative z-10">
-          Bill<span className="text-indigo-400">Karo</span>
+        
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight relative z-10">
+          WhatsApp pe Bill Banao,<br className="hidden md:block" />
+          <span className="text-emerald-400">Paisa Apne Aap Pao</span>
         </h1>
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 relative z-10">
-          WhatsApp-first smart invoicing & collections. Automate reminders and collect payments instantly via UPI.
+        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed">
+          Indian SMEs lose <strong className="text-red-400 font-semibold">₹2.8 lakh/year</strong> in uncollected payments. BillKaro turns WhatsApp into your invoicing + collection machine — <strong className="text-emerald-400">zero app downloads</strong>.
         </p>
-        <div className="flex items-center gap-4 relative z-10">
-          <Button variant="primary" size="lg">Start Free Trial</Button>
-          <Button variant="secondary" size="lg">Book a Demo</Button>
+        <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
+          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-500 text-black hover:bg-emerald-400 border-none font-bold">Start Free Forever Plan</Button>
+          <Button variant="secondary" size="lg" className="w-full sm:w-auto">Book a Demo</Button>
         </div>
-      </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 border-y border-white/[0.08] bg-white/[0.02]">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-extrabold text-emerald-400 mb-1">10 sec</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Invoice Created</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold text-white mb-1">₹0</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Gateway / MDR Fee</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold text-white mb-1">65%</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Faster Collections</div>
+            </div>
+            <div>
+              <div className="text-3xl font-extrabold text-white mb-1">40 min</div>
+              <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Saved per day</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Three steps. Ten seconds.</h2>
+            <p className="text-slate-400">No app. No learning curve. Just talk to your WhatsApp assistant.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl mx-auto mb-6">1</div>
+              <h3 className="text-xl font-bold text-white mb-3">Say or Type</h3>
+              <p className="text-sm text-slate-400 mb-6 leading-relaxed">&quot;Bill 5000 to Rahul for AC repair&quot; — send a text or voice note in Hindi, English, or Hinglish.</p>
+              <Mic className="w-8 h-8 text-slate-600 mx-auto" />
+            </div>
+            
+            <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl mx-auto mb-6">2</div>
+              <h3 className="text-xl font-bold text-white mb-3">Confirm</h3>
+              <p className="text-sm text-slate-400 mb-6 leading-relaxed">AI parses the amount, client, items, and GST automatically. Review the preview and tap Send.</p>
+              <FileText className="w-8 h-8 text-slate-600 mx-auto" />
+            </div>
+            
+            <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl mx-auto mb-6">3</div>
+              <h3 className="text-xl font-bold text-white mb-3">Get Paid</h3>
+              <p className="text-sm text-slate-400 mb-6 leading-relaxed">PDF + UPI link sent to the client. Our 4-step auto-reminders chase the payment so you don&apos;t have to.</p>
+              <Banknote className="w-8 h-8 text-slate-600 mx-auto" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="py-24 bg-white/[0.02] border-t border-white/[0.08]">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Power Features</h2>
+            <p className="text-slate-400">Everything you need to get paid faster without the headache.</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { icon: Receipt, title: "PDF Invoices", desc: "GST-compliant with QR code" },
+              { icon: Mic, title: "Voice Notes", desc: "Speak in Hindi/English/Hinglish" },
+              { icon: Banknote, title: "UPI Payments", desc: "Zero MDR, direct to your bank" },
+              { icon: Clock, title: "Auto Chasers", desc: "4-step payment reminders" },
+              { icon: Calculator, title: "GST Auto-Calc", desc: "Configurable tax rates" },
+              { icon: Smartphone, title: "Mobile First", desc: "Works entirely inside WhatsApp" },
+            ].map((feat, i) => (
+              <div key={i} className="bg-[#050810] border border-white/[0.08] rounded-xl p-6 text-center hover:border-emerald-500/30 transition-colors">
+                <feat.icon className="w-8 h-8 text-emerald-400 mx-auto mb-4" />
+                <h4 className="text-sm font-bold text-white mb-2">{feat.title}</h4>
+                <p className="text-xs text-slate-500">{feat.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
