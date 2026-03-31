@@ -146,9 +146,6 @@ export function Navbar() {
 
             {/* ── Desktop CTAs ── */}
             <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/login">Login</Link>
-              </Button>
               <Button variant="primary" size="sm" asChild>
                 <Link href="#products" className="gap-1.5">
                   Get Started Free <ArrowRight className="h-3.5 w-3.5" />
@@ -206,9 +203,6 @@ export function Navbar() {
               ))}
               <div className="h-px bg-white/[0.06] my-2" />
               <div className="flex flex-col gap-2 pt-1">
-                <Button variant="secondary" size="md" asChild className="w-full justify-center">
-                  <Link href="/login" onClick={() => setMobileOpen(false)}>Login</Link>
-                </Button>
                 <Button variant="primary" size="md" asChild className="w-full justify-center">
                   <Link href="#products" onClick={() => setMobileOpen(false)}>Get Started Free</Link>
                 </Button>

@@ -20,11 +20,11 @@ function useCountUp(target: number, duration = 2000, start = false) {
 }
 
 const STATS = [
-  { label: "Businesses Trust Us",  value: 10000,  suffix: "+",   prefix: "",  decimals: 0, display: "10K+" },
-  { label: "Invoices Sent",         value: 2.3,    suffix: "M+",  prefix: "",  decimals: 1, display: "2.3M+" },
+  { label: "Businesses Trust Us",  value: 500,  suffix: "+",   prefix: "",  decimals: 0, display: "10K+" },
+  { label: "Invoices Sent",         value: 12,    suffix: "K+",  prefix: "",  decimals: 1, display: "2.3M+" },
   { label: "Payment Recovery Rate", value: 98,     suffix: "%",   prefix: "",  decimals: 0, display: "98%"   },
   { label: "Average Rating",        value: 4.9,    suffix: "/5",  prefix: "",  decimals: 1, display: "4.9"   },
-  { label: "States Covered",        value: 28,     suffix: "+",   prefix: "",  decimals: 0, display: "28+"   },
+  { label: "States Covered",        value: 3,     suffix: "+",   prefix: "",  decimals: 0, display: "28+"   },
   { label: "Calls Made Daily",      value: 50,     suffix: "K+",  prefix: "",  decimals: 0, display: "50K+"  },
 ];
 

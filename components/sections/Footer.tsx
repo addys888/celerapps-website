@@ -147,7 +147,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.07] py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-600">
-            © {new Date().getFullYear()} CelerApps Technologies Pvt. Ltd. All rights reserved.
+            © 2025 - {new Date().getFullYear()} CelerApps Technologies Pvt. Ltd. All rights reserved.
           </p>
           <motion.p
             initial={{ opacity:0 }}
