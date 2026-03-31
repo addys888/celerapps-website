@@ -54,6 +54,7 @@ const DIALKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "sky",
+    href: "mailto:hello@celerapps.in?subject=Enterprise%20Plan%20Inquiry" // Triggers email client
   },
 ];
 
@@ -105,6 +106,7 @@ const BILLKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "emerald",
+    href: "mailto:hello@celerapps.in?subject=Business%20Plan%20Inquiry"
   },
 ];
 
@@ -209,14 +211,25 @@ export function Pricing() {
                   </ul>
                 </div>
 
-                <button className={cn(
+                {/* <button className={cn(
                   "w-full py-3 px-6 rounded-xl text-sm font-bold transition-all duration-200",
                   plan.popular 
                     ? activeTab === "dialkaro" ? "bg-sky-500 text-black hover:bg-sky-400" : "bg-emerald-500 text-black hover:bg-emerald-400"
                     : "bg-white/[0.05] text-white border border-white/[0.1] hover:bg-white/[0.1]"
                 )}>
                   {plan.buttonText}
-                </button>
+                </button> */}
+                <a 
+                  href={plan.href}
+                  className={cn(
+                    "w-full py-3 px-6 rounded-xl text-sm font-bold transition-all duration-200 text-center block",
+                    plan.popular 
+                      ? activeTab === "dialkaro" ? "bg-sky-500 text-black hover:bg-sky-400" : "bg-emerald-500 text-black hover:bg-emerald-400"
+                      : "bg-white/[0.05] text-white border border-white/[0.1] hover:bg-white/[0.1]"
+                  )}
+                >
+                  {plan.buttonText}
+                </a>
               </motion.div>
             ))}
           </AnimatePresence>

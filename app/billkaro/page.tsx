@@ -28,9 +28,15 @@ export default function BillKaroPage() {
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed">
           Indian SMEs lose <strong className="text-red-400 font-semibold">₹2.8 lakh/year</strong> in uncollected payments. BillKaro turns WhatsApp into your invoicing + collection machine — <strong className="text-emerald-400">zero app downloads</strong>.
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-500 text-black hover:bg-emerald-400 border-none font-bold">Start Free Forever Plan</Button>
-          <Button variant="secondary" size="lg" className="w-full sm:w-auto">Book a Demo</Button>
+       <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
+          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-500 text-black hover:bg-emerald-400 border-none font-bold">
+            Start Free Forever Plan
+          </Button>
+          <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
+            <a href="https://wa.me/919452661608?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20BillKaro." target="_blank" rel="noopener noreferrer">
+              Book a Demo
+            </a>
+          </Button>
         </div>
       </section>
 

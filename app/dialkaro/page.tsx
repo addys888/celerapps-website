@@ -28,9 +28,15 @@ export default function DialKaroPage() {
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed">
           Stop wasting <strong className="text-red-400 font-semibold">58 minutes every day</strong> per rep on manual tracking. Start calling smarter with AI-powered reports and WhatsApp integration.
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-sky-500 text-white hover:bg-sky-600 border-none">Start 7-Day Trial</Button>
-          <Button variant="secondary" size="lg" className="w-full sm:w-auto">Book a Demo</Button>
+       <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
+          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-sky-500 text-white hover:bg-sky-600 border-none">
+            Start 7-Day Trial
+          </Button>
+          <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
+            <a href="https://wa.me/919452661608?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20DialKaro." target="_blank" rel="noopener noreferrer">
+              Book a Demo
+            </a>
+          </Button>
         </div>
       </section>
 
