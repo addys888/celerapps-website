@@ -3,10 +3,12 @@ import { Hero }          from "@/components/sections/Hero";
 import { Products }      from "@/components/sections/Products";
 import { WhyCelerApps }  from "@/components/sections/WhyCelerApps";
 import { HowItWorks }    from "@/components/sections/HowItWorks";
+import { Pricing }        from "@/components/sections/Pricing";
 import { Testimonials }  from "@/components/sections/Testimonials";
 import { Stats }         from "@/components/sections/Stats";
 import { CTABanner }     from "@/components/sections/CTABanner";
 import { Footer }        from "@/components/sections/Footer";
+
 
 export default function HomePage() {
   return (
