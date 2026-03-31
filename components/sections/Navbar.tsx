@@ -20,8 +20,8 @@ const PRODUCTS = [
 ];
 
 const NAV = [
-  { label: "Solutions", href: "#why"      },
-  { label: "Pricing",   href: "#pricing"  },
+  { label: "Solutions", href: "/#why"      },
+  { label: "Pricing",   href: "/#pricing"  },
   { label: "Blog",      href: "/blog"     },
   { label: "Resources", href: "/resources"},
 ];
