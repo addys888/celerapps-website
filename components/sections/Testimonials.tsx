@@ -109,7 +109,12 @@ export function Testimonials() {
               </div>
 
               {/* Text */}
+<<<<<<< HEAD
             <p className="text-sm text-slate-300 leading-relaxed mb-5">&quot;{t.text}&quot;</p>
+=======
+              <p className="text-sm text-slate-300 leading-relaxed mb-5">"{t.text}"</p>
+
+>>>>>>> cb5fe12 (Initial commit: CelerApps landing page)
               {/* Footer */}
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style={{background:t.avatarBg}}>
