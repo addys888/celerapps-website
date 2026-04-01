@@ -1,4 +1,3 @@
-"use client";    // ← add this as line 1
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Testimonials } from "@/components/sections/Testimonials";
