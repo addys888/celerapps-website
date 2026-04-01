@@ -1,3 +1,5 @@
+// At the top, add this import:
+import HeroImage from "./HeroImage";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -44,19 +46,9 @@ export default function BillKaroPage() {
         <div className="relative max-w-5xl mx-auto w-full z-10">
           <div className="absolute inset-0 bg-emerald-500/20 blur-[100px] -z-10 rounded-full" />
           <div className="rounded-2xl border border-white/[0.08] bg-[#0a0d1a]/80 backdrop-blur-sm p-2 shadow-2xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
-            
-            {/* Replace the src with your actual exported mockup from Figma/HTML */}
-            <img 
-              src="/dashboard-mockup.png" 
-              alt="BillKaro Dashboard and WhatsApp Flow" 
-              className="w-full h-auto rounded-xl border border-white/[0.04] transition-transform duration-700 group-hover:scale-[1.01]"
-              onError={(e) => {
-                // Fallback placeholder if image isn't uploaded yet
-                e.currentTarget.src = "https://placehold.co/1200x600/0a0d1a/25D366?text=BillKaro+WhatsApp+Dashboard+Mockup";
-              }}
-            />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
+          <HeroImage />
+        </div>
         </div>
       </section>
 
