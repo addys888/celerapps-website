@@ -126,7 +126,7 @@ export function Footer() {
                /* ["DialKaro Pricing","/dialkaro/pricing" ],
                 ["BillKaro Pricing","/billkaro/pricing" ],*/
                 ["Integrations",    "/integrations"     ],
-                ["API Docs",        "/api"              ],
+                /*["API Docs",        "/api"              ],*/
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link href={href} className="text-sm text-slate-400 hover:text-white transition-colors">{label}</Link>
