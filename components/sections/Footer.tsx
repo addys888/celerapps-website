@@ -108,8 +108,8 @@ export function Footer() {
               {[
                 ["DialKaro",        "/dialkaro"         ],
                 ["BillKaro",        "/billkaro"         ],
-                ["DialKaro Pricing","/dialkaro/pricing" ],
-                ["BillKaro Pricing","/billkaro/pricing" ],
+               /* ["DialKaro Pricing","/dialkaro/pricing" ],
+                ["BillKaro Pricing","/billkaro/pricing" ],*/
                 ["Integrations",    "/integrations"     ],
                 ["API Docs",        "/api"              ],
               ].map(([label, href]) => (
