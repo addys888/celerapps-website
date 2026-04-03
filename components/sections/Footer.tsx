@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Zap, Phone, FileText, Twitter, Linkedin, Github, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const PRODUCTS = [
   { name:"DialKaro", href:"/dialkaro", icon:Phone, desc:"AI Sales Dialer" },
@@ -44,11 +45,25 @@ export function Footer() {
 
           {/* Brand col */}
           <div className="col-span-2 lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2.5 group mb-4">
+            {/*}<Link href="/" className="inline-flex items-center gap-2.5 group mb-4">
               <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-sky-500/25 group-hover:shadow-sky-500/40 transition-shadow">
                 <Zap className="h-4.5 w-4.5 text-white fill-white" />
               </div>
               <span className="text-base font-semibold">
+                <span className="text-white">Celer</span>
+                <span className="gradient-text">Apps</span>
+              </span>
+            </Link> {*/}
+            {/* ── Logo ── */}
+            <Link href="/" className="flex items-center gap-2.5 group inline-flex mb-6">
+              <Image 
+                src="/logo.png" 
+                alt="CelerApps Logo" 
+                width={32} 
+                height={32} 
+                className="rounded-lg object-contain group-hover:opacity-80 transition-opacity"
+              />
+              <span className="text-[17px] font-semibold tracking-tight">
                 <span className="text-white">Celer</span>
                 <span className="gradient-text">Apps</span>
               </span>
