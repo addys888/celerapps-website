@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, FileText, ChevronDown, Menu, X, Zap, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const PRODUCTS = [
   {
@@ -64,10 +65,13 @@ export function Navbar() {
 
             {/* ── Logo ── */}
             <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-              <div className="relative h-8 w-8 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-sky-500/30 group-hover:shadow-sky-500/50 transition-shadow duration-300">
-                <Zap className="h-4 w-4 text-white fill-white" />
-                <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-sky-300 animate-[pulseSoft_3s_ease-in-out_infinite]" />
-              </div>
+              <Image 
+                src="/logo.png" 
+                alt="CelerApps Logo" 
+                width={32} 
+                height={32} 
+                className="rounded-lg object-contain group-hover:opacity-80 transition-opacity"
+              />
               <span className="text-[15px] font-semibold tracking-tight">
                 <span className="text-white">Celer</span>
                 <span className="gradient-text">Apps</span>
