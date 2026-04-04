@@ -135,7 +135,7 @@ export function Hero() {
 
   return (
     //<section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-    <section className="pt-32 pb-20 container mx-auto px-4 overflow-hidden ...">
+    <section className="pt-32 pb-20 container mx-auto px-4 md:px-8 overflow-hidden">
       {/* Backgrounds */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none" style={{background:"radial-gradient(ellipse 90% 55% at 50% -5%, rgba(14,165,233,0.12), transparent)"}} />
@@ -143,7 +143,8 @@ export function Hero() {
       <div className="absolute top-1/3 -right-40 w-[440px] h-[440px] rounded-full bg-indigo-600/8 blur-[110px] pointer-events-none" />
 
       {/*<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-28">*/}
-      <div className="relative mx-auto w-full max-w-4xl transform scale-[0.65] sm:scale-90 md:scale-100 origin-top flex justify-center mt-8 md:mt-16">
+      {/* Added negative margins to pull it wider on mobile */}
+<div className="relative mx-auto w-full max-w-4xl transform scale-[0.65] sm:scale-90 md:scale-100 origin-top flex justify-center -mx-16 md:mx-auto -mb-24 md:mb-0 mt-8 md:mt-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ── Left ── */}
