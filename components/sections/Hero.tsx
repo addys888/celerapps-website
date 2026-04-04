@@ -134,7 +134,6 @@ export function Hero() {
   });
 
   return (
-    //<section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
     <section className="pt-32 pb-20 container mx-auto px-4 md:px-8 overflow-hidden">
       {/* Backgrounds */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
@@ -142,12 +141,11 @@ export function Hero() {
       <div className="absolute top-1/4 -left-72 w-[560px] h-[560px] rounded-full bg-sky-600/8 blur-[130px] pointer-events-none" />
       <div className="absolute top-1/3 -right-40 w-[440px] h-[440px] rounded-full bg-indigo-600/8 blur-[110px] pointer-events-none" />
 
-      {/*<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-28">*/}
-      {/* Added negative margins to pull it wider on mobile */}
-<div className="relative mx-auto w-full max-w-4xl transform scale-[0.65] sm:scale-90 md:scale-100 origin-top flex justify-center -mx-16 md:mx-auto -mb-24 md:mb-0 mt-8 md:mt-16">
+      {/* 1. Main Wrapper - Removed the scaling from here! */}
+      <div className="relative mx-auto max-w-7xl w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* ── Left ── */}
+          {/* ── Left: Text & Buttons ── */}
           <div>
             <motion.div {...fadeUp(0)}>
               <Badge variant="brand" className="mb-5 text-[11px]">
@@ -206,12 +204,12 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ── Right: mockups ── */}
+          {/* ── Right: mockups (Scaling & Negative Margins MOVED HERE) ── */}
           <motion.div
             initial={{ opacity: 0, x: 48 }}
             animate={{ opacity: 1, x:  0 }}
             transition={{ duration: 0.85, delay: 0.2, ease: [0.22,1,0.36,1] }}
-            className="relative flex justify-center items-start min-h-[460px]"
+            className="relative flex justify-center items-start min-h-[460px] transform scale-[0.70] sm:scale-90 lg:scale-100 origin-top -mx-14 md:mx-0 -mb-24 md:mb-0 mt-8 lg:mt-0"
           >
             {/* Glow behind */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
