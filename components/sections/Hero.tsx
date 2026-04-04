@@ -134,6 +134,7 @@ export function Hero() {
   });
 
   return (
+    //<section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
     <section className="pt-32 pb-20 container mx-auto px-4 md:px-8 overflow-hidden">
       {/* Backgrounds */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
@@ -141,10 +142,12 @@ export function Hero() {
       <div className="absolute top-1/4 -left-72 w-[560px] h-[560px] rounded-full bg-sky-600/8 blur-[130px] pointer-events-none" />
       <div className="absolute top-1/3 -right-40 w-[440px] h-[440px] rounded-full bg-indigo-600/8 blur-[110px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl w-full">
+      {/*<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-28">*/}
+      {/* Added negative margins to pull it wider on mobile */}
+      <div className="relative mx-auto w-full max-w-4xl transform scale-[0.65] sm:scale-90 md:scale-100 origin-top flex justify-center -mx-16 md:mx-auto -mb-24 md:mb-0 mt-8 md:mt-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* ── Left: Text & Buttons ── */}
+          {/* ── Left ── */}
           <div>
             <motion.div {...fadeUp(0)}>
               <Badge variant="brand" className="mb-5 text-[11px]">
@@ -203,53 +206,51 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ── Right: mockups (THE SILVER BULLET FIX) ── */}
-          <div className="relative w-full flex justify-center lg:justify-end mt-16 lg:mt-0 -mb-28 sm:-mb-10 lg:mb-0">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y:  0 }}
-              transition={{ duration: 0.85, delay: 0.2, ease: [0.22,1,0.36,1] }}
-              className="relative w-[500px] shrink-0 flex justify-center items-start transform scale-[0.65] sm:scale-80 lg:scale-100 origin-top lg:origin-center"
-            >
-              {/* Glow behind */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-72 h-72 rounded-full bg-sky-500/10 blur-3xl" />
+          {/* ── Right: mockups ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 48 }}
+            animate={{ opacity: 1, x:  0 }}
+            transition={{ duration: 0.85, delay: 0.2, ease: [0.22,1,0.36,1] }}
+            className="relative flex justify-center items-start min-h-[460px]"
+          >
+            {/* Glow behind */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-72 h-72 rounded-full bg-sky-500/8 blur-3xl" />
+            </div>
+
+            {/* Cards */}
+            <div className="relative pt-8 flex gap-5 items-start">
+              <DialKaroCard />
+              <div className="pt-16">
+                <BillKaroCard />
               </div>
+            </div>
 
-              {/* Cards */}
-              <div className="relative pt-8 flex gap-5 items-start">
-                <DialKaroCard />
-                <div className="pt-16">
-                  <BillKaroCard />
-                </div>
+            {/* Floating badges */}
+            <FloatBadge delay={0.9} className="absolute top-4 right-0 flex items-center gap-2 px-3 py-2 rounded-xl bg-sky-500/10 border border-sky-500/25 backdrop-blur-sm text-[11px] text-sky-300 font-medium">
+              <Zap className="h-3 w-3" /> AI Summary Ready
+            </FloatBadge>
+
+            <FloatBadge delay={1.3} className="absolute bottom-12 left-0 flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 backdrop-blur-sm">
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+              <div>
+                <p className="text-[11px] font-semibold text-white leading-none">₹24,500 Received</p>
+                <p className="text-[9px] text-slate-500 mt-0.5">via UPI · just now</p>
               </div>
+            </FloatBadge>
 
-              {/* Floating badges */}
-              <FloatBadge delay={0.9} className="absolute top-4 right-0 flex items-center gap-2 px-3 py-2 rounded-xl bg-sky-500/10 border border-sky-500/25 backdrop-blur-sm text-[11px] text-sky-300 font-medium">
-                <Zap className="h-3 w-3" /> AI Summary Ready
-              </FloatBadge>
+            <FloatBadge delay={1.6} className="absolute top-[42%] -left-2 flex items-center gap-2 px-3 py-2 rounded-xl bg-white/[0.04] border border-white/[0.09] backdrop-blur-sm">
+              <TrendingUp className="h-3.5 w-3.5 text-sky-400" />
+              <div>
+                <p className="text-[11px] font-bold text-white">+34% calls/day</p>
+                <p className="text-[9px] text-slate-500">vs manual dialing</p>
+              </div>
+            </FloatBadge>
 
-              <FloatBadge delay={1.3} className="absolute bottom-12 left-0 flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/25 backdrop-blur-sm">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
-                <div>
-                  <p className="text-[11px] font-semibold text-white leading-none">₹24,500 Received</p>
-                  <p className="text-[9px] text-slate-500 mt-0.5">via UPI · just now</p>
-                </div>
-              </FloatBadge>
-
-              <FloatBadge delay={1.6} className="absolute top-[42%] -left-4 flex items-center gap-2 px-3 py-2 rounded-xl bg-white/[0.04] border border-white/[0.09] backdrop-blur-sm">
-                <TrendingUp className="h-3.5 w-3.5 text-sky-400" />
-                <div>
-                  <p className="text-[11px] font-bold text-white">+34% calls/day</p>
-                  <p className="text-[9px] text-slate-500">vs manual dialing</p>
-                </div>
-              </FloatBadge>
-
-              <FloatBadge delay={2.0} className="absolute bottom-4 right-4 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/25 text-[10px] text-indigo-300">
-                <Users className="h-3 w-3" /> 248 businesses joined today
-              </FloatBadge>
-            </motion.div>
-          </div>
+            <FloatBadge delay={2.0} className="absolute bottom-4 right-4 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/25 text-[10px] text-indigo-300">
+              <Users className="h-3 w-3" /> 248 businesses joined today
+            </FloatBadge>
+          </motion.div>
         </div>
       </div>
 
