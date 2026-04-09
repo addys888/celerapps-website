@@ -1,16 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function SplashScreen({ onComplete }: { onComplete: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Total duration of the splash (drawing + hold + fade)
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 800); // Trigger parent complete after fade animation
-    }, 2800);
+      setTimeout(onComplete, 1000); 
+    }, 3000); // Slightly longer for the focus effect
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -19,92 +19,85 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 1, scale: 1 }}
           exit={{ 
             opacity: 0, 
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+            scale: 1.5, // Zoom-through expansion
+            filter: "blur(40px)",
+            transition: { duration: 1.2, ease: [0.7, 0, 0.3, 1] } 
           }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#050810]"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#050810] overflow-hidden"
         >
-          <div className="relative flex flex-col items-center gap-8">
-            {/* SVG Logo Container */}
-            <div className="relative h-24 w-24 sm:h-32 sm:w-32">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-full w-full"
-              >
-                {/* Background Glow */}
-                <motion.circle
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ 
-                    opacity: [0, 0.2, 0.1], 
-                    scale: [0.8, 1.2, 1],
-                  }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="fill-sky-500/20 blur-xl"
-                />
-
-                {/* The Zap Path */}
-                <motion.path
-                  d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
-                  stroke="currentColor"
-                  strokeWidth="0.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-sky-400"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ 
-                    pathLength: 1, 
-                    opacity: 1,
-                  }}
-                  transition={{ 
-                    duration: 1.5, 
-                    ease: "easeInOut",
-                  }}
-                />
-
-                {/* Fill Animation after drawing */}
-                <motion.path
-                  d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
-                  initial={{ fill: "transparent", opacity: 0 }}
-                  animate={{ 
-                    fill: "rgba(56, 189, 248, 1)", // sky-400
-                    opacity: 1 
-                  }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                />
-              </svg>
-            </div>
-
-            {/* Text Animation */}
-            <div className="overflow-hidden flex items-center">
+          {/* Background Immersive Elements */}
+          <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{background: "radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%)"}} 
+          />
+          
+          <div className="relative flex flex-col items-center gap-10">
+            {/* Logo Container with Focus Effect */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative h-32 w-32 sm:h-44 sm:w-44"
+            >
+              <Image
+                src="/brand-icon.png"
+                alt="CelerApps Logo"
+                fill
+                className="object-contain drop-shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+                priority
+              />
+              
+              {/* Pulsing Outer Glow */}
               <motion.div
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ delay: 1.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center gap-1.5"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.2, 0.5, 0.2],
+                }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 bg-sky-500/20 rounded-full blur-3xl -z-10"
+              />
+            </motion.div>
+
+            {/* Subtext Reveal */}
+            <div className="overflow-hidden">
+              <motion.div
+                initial={{ y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.8, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-2"
               >
-                <span className="text-2xl sm:text-4xl font-bold tracking-tighter text-white">
+                <span className="text-3xl sm:text-5xl font-bold tracking-tighter text-white">
                   Celer
                 </span>
-                <span className="text-2xl sm:text-4xl font-bold tracking-tighter bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">
+                <span className="text-3xl sm:text-5xl font-bold tracking-tighter bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">
                   Apps
                 </span>
               </motion.div>
+              
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5, duration: 1 }}
+                className="text-slate-500 text-sm sm:text-base tracking-[0.2em] uppercase mt-3 font-medium text-center"
+              >
+                Fast • Intelligent • Built for India
+              </motion.p>
             </div>
 
-            {/* Loading Bar */}
-            <div className="absolute -bottom-16 w-32 h-[2px] bg-white/5 rounded-full overflow-hidden">
+            {/* Bottom Progress Bar */}
+            <div className="absolute -bottom-24 w-48 h-[1px] bg-white/5 rounded-full overflow-hidden">
               <motion.div
                 initial={{ x: "-100%" }}
                 animate={{ x: "0%" }}
-                transition={{ duration: 2.2, ease: "easeInOut" }}
-                className="h-full w-full bg-gradient-to-r from-sky-400 to-indigo-500 shadow-[0_0_10px_rgba(56,189,248,0.5)]"
+                transition={{ duration: 2.8, ease: "easeInOut" }}
+                className="h-full w-full bg-gradient-to-r from-sky-400 via-indigo-500 to-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.6)]"
               />
             </div>
           </div>
