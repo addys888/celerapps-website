@@ -13,15 +13,14 @@ const PRODUCTS = [
 const QUICK = [
   ["Solutions",  "#why"       ],
   ["Pricing",    "#pricing"   ],
+  ["Contact Us", "#contact"   ],
   ["Blog",       "/blog"      ],
-  ["Resources",  "/resources" ],
   ["Changelog",  "/changelog" ],
 ];
 
 const LEGAL = [
   ["Privacy Policy",  "/privacy"  ],
   ["Terms of Use",    "/terms"    ],
-  ["Cookie Policy",   "/cookies"  ],
   ["Refund Policy",   "/refunds"  ],
 ];
 
@@ -29,7 +28,7 @@ const SOCIAL = [
   { icon: Twitter,  href: "https://twitter.com/celerapps",            label: "Twitter"  },
   { icon: Linkedin, href: "https://linkedin.com/company/celerapps",   label: "LinkedIn" },
   { icon: Github,   href: "https://github.com/celerapps",             label: "GitHub"   },
-  { icon: Mail,     href: "mailto:support@celerapps.in",              label: "Email"    },
+  { icon: Mail,     href: "mailto:hello@celerapps.in",                label: "Email"    },
 ];
 
 export function Footer() {
@@ -45,15 +44,6 @@ export function Footer() {
 
           {/* Brand col */}
           <div className="col-span-2 lg:col-span-2">
-            {/*}<Link href="/" className="inline-flex items-center gap-2.5 group mb-4">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-sky-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-sky-500/25 group-hover:shadow-sky-500/40 transition-shadow">
-                <Zap className="h-4.5 w-4.5 text-white fill-white" />
-              </div>
-              <span className="text-base font-semibold">
-                <span className="text-white">Celer</span>
-                <span className="gradient-text">Apps</span>
-              </span>
-            </Link> {*/}
             {/* ── Logo ── */}
             <Link href="/" className="flex items-center gap-2.5 group inline-flex mb-6">
               <Image 
@@ -123,10 +113,7 @@ export function Footer() {
               {[
                 ["DialKaro",        "/dialkaro"         ],
                 ["BillKaro",        "/billkaro"         ],
-               /* ["DialKaro Pricing","/dialkaro/pricing" ],
-                ["BillKaro Pricing","/billkaro/pricing" ],*/
                 ["Integrations",    "/integrations"     ],
-                /*["API Docs",        "/api"              ],*/
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link href={href} className="text-sm text-slate-400 hover:text-white transition-colors">{label}</Link>
@@ -147,10 +134,10 @@ export function Footer() {
             </ul>
             <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">Contact</p>
             <div className="space-y-2">
-              <a href="mailto:support@celerapps.in" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+              <Link href="#contact" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
                 <Mail className="h-3.5 w-3.5" />
-                support@celerapps.in
-              </a>
+                hello@celerapps.in
+              </Link>
               <div className="flex items-center gap-2 text-sm text-slate-500">
                 <MapPin className="h-3.5 w-3.5" />
                 Lucknow, India 🇮🇳
