@@ -59,10 +59,10 @@ export function Contact() {
                 <MessageSquare className="h-3 w-3 mr-1" /> Contact Us
               </Badge>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-6">
-                Let's Build Something <span className="gradient-text">Exceptional</span>
+                Let&apos;s Build Something <span className="gradient-text">Exceptional</span>
               </h2>
               <p className="text-lg text-slate-400 leading-relaxed">
-                Whether you have a specific project in mind or just want to explore how our AI apps can help your business, we're here to talk.
+                Whether you have a specific project in mind or just want to explore how our AI apps can help your business, we&apos;re here to talk.
               </p>
             </motion.div>
 
@@ -206,7 +206,7 @@ export function Contact() {
                     className="mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3"
                   >
                     <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                    <p className="text-sm text-emerald-400 font-medium">Message sent! We'll get back to you soon.</p>
+                    <p className="text-sm text-emerald-400 font-medium">Message sent! We&apos;ll get back to you soon.</p>
                   </motion.div>
                 )}
               </div>
