@@ -51,6 +51,10 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
                 alt="CelerApps Logo"
                 fill
                 className="object-contain drop-shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+                style={{ 
+                  filter: "invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.1)",
+                  mixBlendMode: "screen"
+                }}
                 priority
               />
               
