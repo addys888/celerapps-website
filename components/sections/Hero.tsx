@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, FileText, Star, TrendingUp, Zap, CheckCircle2, Users } from "lucide-react";
+import { useLoading } from "@/components/providers/LoadingProvider";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -120,10 +121,12 @@ function FloatBadge({ children, className, delay=0 }: { children: React.ReactNod
 
 /* ─── Hero ─── */
 export function Hero() {
+  const { isLoading } = useLoading();
+
   const fadeUp = (delay = 0) => ({
     initial:    { opacity: 0, y: 28 },
-    animate:    { opacity: 1, y:  0 },
-    transition: { duration: 0.6, delay, ease: [0.22,1,0.36,1] },
+    animate:    isLoading ? { opacity: 0, y: 28 } : { opacity: 1, y:  0 },
+    transition: { duration: 0.6, delay: delay + 0.2, ease: [0.22,1,0.36,1] },
   });
 
   return (
@@ -213,8 +216,8 @@ export function Hero() {
           {/* ✅ FIX 5: hidden on mobile, shown from lg. On mobile the left col alone is the full hero */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.85, delay: 0.2, ease: [0.22,1,0.36,1] }}
+            animate={isLoading ? { opacity: 0, x: 40 } : { opacity: 1, x: 0 }}
+            transition={{ duration: 0.85, delay: 0.4, ease: [0.22,1,0.36,1] }}
             className="hidden lg:flex relative justify-center items-start min-h-[460px]"
           >
             {/* Glow */}
@@ -258,8 +261,8 @@ export function Hero() {
           {/* ✅ FIX 6: Mobile-only compact mockup preview — scaled down, centered */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            animate={isLoading ? { opacity: 0, y: 24 } : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
             className="lg:hidden flex justify-center items-start gap-4 pt-2 pb-4"
           >
             <DialKaroCard />

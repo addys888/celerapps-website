@@ -27,7 +27,10 @@ const NAV = [
   { label: "Resources", href: "/resources"},
 ];
 
+import { useLoading } from "@/components/providers/LoadingProvider";
+
 export function Navbar() {
+  const { isLoading } = useLoading();
   const [scrolled,   setScrolled]   = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropOpen,   setDropOpen]   = useState(false);
@@ -51,8 +54,8 @@ export function Navbar() {
     <>
       <motion.header
         initial={{ y: -72, opacity: 0 }}
-        animate={{ y: 0,   opacity: 1 }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        animate={isLoading ? { y: -72, opacity: 0 } : { y: 0, opacity: 1 }}
+        transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
           scrolled
