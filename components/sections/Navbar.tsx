@@ -24,7 +24,7 @@ const NAV = [
   { label: "Solutions", href: "/#why"      },
   { label: "Pricing",   href: "/#pricing"  },
   { label: "Blog",      href: "/blog"     },
-  { label: "Contact",   href: "/#contact"  },
+  { label: "Contact",   href: "/contact"   },
 ];
 
 import { useLoading } from "@/components/providers/LoadingProvider";

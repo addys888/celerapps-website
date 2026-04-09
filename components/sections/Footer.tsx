@@ -13,7 +13,7 @@ const PRODUCTS = [
 const QUICK = [
   ["Solutions",  "#why"       ],
   ["Pricing",    "#pricing"   ],
-  ["Contact Us", "#contact"   ],
+  ["Contact Us", "/contact"   ],
   ["Blog",       "/blog"      ],
   ["Changelog",  "/changelog" ],
 ];
@@ -134,7 +134,7 @@ export function Footer() {
             </ul>
             <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">Contact</p>
             <div className="space-y-2">
-              <Link href="#contact" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+              <Link href="/contact" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
                 <Mail className="h-3.5 w-3.5" />
                 hello@celerapps.in
               </Link>
