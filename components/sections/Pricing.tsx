@@ -22,6 +22,7 @@ const DIALKARO_PLANS = [
     buttonText: "Get Started →",
     popular: false,
     color: "sky",
+    href: "/#products"
   },
   {
     name: "Pro",
@@ -38,6 +39,7 @@ const DIALKARO_PLANS = [
     buttonText: "Get Started →",
     popular: true,
     color: "sky",
+    href: "/#products"
   },
   {
     name: "Enterprise",
@@ -74,6 +76,7 @@ const BILLKARO_PLANS = [
     buttonText: "Get Started Free →",
     popular: false,
     color: "emerald",
+    href: "/#products"
   },
   {
     name: "Pro",
@@ -90,6 +93,7 @@ const BILLKARO_PLANS = [
     buttonText: "Start 7-Day Trial →",
     popular: true,
     color: "emerald",
+    href: "/#products"
   },
   {
     name: "Business",
