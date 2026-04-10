@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const { name, email, phone, company, product, message } = await req.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'CelerApps Demo <onboarding@resend.dev>',
+      from: 'CelerApps <hello@celerapps.com>',
       to: ['hello@celerapps.com'],
       subject: `New Demo Request: ${product} - ${company}`,
       html: `
