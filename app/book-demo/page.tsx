@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, Calendar, ArrowRight, CheckCircle2, Building2, User2, MessageSquare, MonitorPlay } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -19,27 +19,78 @@ export default function BookADemoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const fullMessage = `Hi CelerApps Team,\n\nI want to book a demo for ${form.product}.\n\nName: ${form.name}\nCompany: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nRequirements: ${form.message}`;
+    try {
+      const response = await fetch("/api/send-demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    const mailtoUrl = `mailto:hello@celerapps.com?subject=Demo Booking: ${form.product} - ${form.company}&body=${encodeURIComponent(fullMessage)}`;
-    
-    window.location.href = mailtoUrl;
-
-    setTimeout(() => {
+      if (response.ok) {
+        setIsSuccess(true);
+        // Clear form after success
+        setForm({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          product: "DialKaro",
+          message: "",
+        });
+      } else {
+        alert("Something went wrong. Please try again or email us directly at hello@celerapps.com");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1000);
+    }
   };
 
   return (
     <main className="relative bg-[#050810] min-h-screen">
       <Navbar />
       
+      {/* Success Modal Overlay */}
+      <AnimatePresence>
+        {isSuccess && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsSuccess(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-md bg-[#0c111d] border border-emerald-500/20 rounded-[2.5rem] p-10 text-center shadow-2xl"
+            >
+              <div className="h-20 w-20 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-6 border border-emerald-500/20">
+                <CheckCircle2 className="h-10 w-10 text-emerald-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Booking Confirmed!</h3>
+              <p className="text-slate-400 mb-8 leading-relaxed">
+                Thank you for your interest. A product specialist will reach out to you within 24 hours to coordinate the demo.
+              </p>
+              <Button
+                onClick={() => setIsSuccess(false)}
+                className="w-full h-14 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-2xl"
+              >
+                Close
+              </Button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
         {/* Background Decor */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
@@ -106,7 +157,7 @@ export default function BookADemoPage() {
                           <input
                             type="text"
                             required
-                            placeholder="Adarsh Sinha"
+                            placeholder="Your Name"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.name}
                             onChange={(e) => setForm({...form, name: e.target.value})}
@@ -120,7 +171,7 @@ export default function BookADemoPage() {
                           <input
                             type="text"
                             required
-                            placeholder="Your Company Name"
+                            placeholder="Company Name"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.company}
                             onChange={(e) => setForm({...form, company: e.target.value})}
@@ -137,7 +188,7 @@ export default function BookADemoPage() {
                           <input
                             type="email"
                             required
-                            placeholder="adarsh@celerapps.com"
+                            placeholder="email@company.com"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.email}
                             onChange={(e) => setForm({...form, email: e.target.value})}
@@ -151,7 +202,7 @@ export default function BookADemoPage() {
                           <input
                             type="tel"
                             required
-                            placeholder="+91 94526 61608"
+                            placeholder="+91 00000 00000"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.phone}
                             onChange={(e) => setForm({...form, phone: e.target.value})}
@@ -179,7 +230,7 @@ export default function BookADemoPage() {
                         <MessageSquare className="absolute left-4 top-4 h-4 w-4 text-slate-500 group-focus-within:text-emerald-400 transition-colors" />
                         <textarea
                           rows={3}
-                          placeholder="Briefly describe your team size and current challenges..."
+                          placeholder="Briefly describe your requirements..."
                           className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all resize-none"
                           value={form.message}
                           onChange={(e) => setForm({...form, message: e.target.value})}
@@ -202,17 +253,6 @@ export default function BookADemoPage() {
                         </>
                       )}
                     </Button>
-
-                    {isSuccess && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3"
-                      >
-                        <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                        <p className="text-sm text-emerald-400 font-medium">Request sent! We&apos;ll email you timings shortly.</p>
-                      </motion.div>
-                    )}
                   </form>
                 </div>
               </div>
