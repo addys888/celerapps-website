@@ -26,7 +26,7 @@ export function Contact() {
       const url = `https://wa.me/919452661608?text=${encodeURIComponent(fullMessage)}`;
       window.open(url, "_blank");
     } else {
-      const url = `mailto:hello@celerapps.in?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(fullMessage)}`;
+      const url = `mailto:hello@celerapps.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(fullMessage)}`;
       window.location.href = url;
     }
 
@@ -68,7 +68,7 @@ export function Contact() {
 
             <div className="space-y-6 pt-4">
               {[
-                { icon: Mail, label: "Email Us", val: "hello@celerapps.in", href: "mailto:hello@celerapps.in" },
+                { icon: Mail, label: "Email Us", val: "hello@celerapps.com", href: "mailto:hello@celerapps.com" },
                 { icon: Phone, label: "WhatsApp/Call", val: "+91 94526-61608", href: "https://wa.me/919452661608" },
                 { icon: MapPin, label: "Location", val: "Lucknow, India 🇮🇳", href: null },
               ].map((item, i) => (

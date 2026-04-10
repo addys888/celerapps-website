@@ -56,7 +56,7 @@ const DIALKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "sky",
-    href: "mailto:hello@celerapps.in?subject=Enterprise%20Plan%20Inquiry" // Triggers email client
+    href: "mailto:hello@celerapps.com?subject=Enterprise%20Plan%20Inquiry" // Triggers email client
   },
 ];
 
@@ -110,7 +110,7 @@ const BILLKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "emerald",
-    href: "mailto:hello@celerapps.in?subject=Business%20Plan%20Inquiry"
+    href: "mailto:hello@celerapps.com?subject=Business%20Plan%20Inquiry"
   },
 ];
 

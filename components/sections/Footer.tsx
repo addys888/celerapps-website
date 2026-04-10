@@ -28,7 +28,7 @@ const SOCIAL = [
   { icon: Twitter,  href: "https://twitter.com/celerapps",            label: "Twitter"  },
   { icon: Linkedin, href: "https://linkedin.com/company/celerapps",   label: "LinkedIn" },
   { icon: Github,   href: "https://github.com/celerapps",             label: "GitHub"   },
-  { icon: Mail,     href: "mailto:hello@celerapps.in",                label: "Email"    },
+  { icon: Mail,     href: "mailto:hello@celerapps.com",                label: "Email"    },
 ];
 
 export function Footer() {
@@ -136,7 +136,7 @@ export function Footer() {
             <div className="space-y-2">
               <Link href="/contact" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
                 <Mail className="h-3.5 w-3.5" />
-                hello@celerapps.in
+                hello@celerapps.com
               </Link>
               <div className="flex items-center gap-2 text-sm text-slate-500">
                 <MapPin className="h-3.5 w-3.5" />

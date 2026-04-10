@@ -9,7 +9,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const siteUrl  = "https://celerapps.in";
+const siteUrl  = "https://celerapps.com";
 const siteName = "CelerApps";
 const siteDesc = "Fast. Intelligent. Built for India. CelerApps builds AI-powered SaaS products — DialKaro (AI sales dialer) and BillKaro (WhatsApp invoicing) — that solve real Indian business problems.";
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CelerApps - AI-Powered Business Apps",
     description: "Built for speed. Designed for India. Loved by thousands of businesses.",
-    url: "https://celerapps.in",
+    url: "https://celerapps.com",
     siteName: "CelerApps",
     locale: "en_IN",
     type: "website" as const,

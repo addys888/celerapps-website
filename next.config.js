@@ -1,2 +1,2 @@
 /** @type {import('next').NextConfig} */
-module.exports = { images: { domains: ["celerapps.in"] } };
+module.exports = { images: { domains: ["celerapps.com"] } };
