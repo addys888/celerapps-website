@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { PhoneCall, Timer, FileSpreadsheet, BrainCircuit, BarChart3, Globe, MessageSquare, ShieldCheck } from "lucide-react";
 
 export const metadata = {
@@ -29,11 +30,11 @@ export default function DialKaroPage() {
           Stop wasting <strong className="text-red-400 font-semibold">58 minutes every day</strong> per rep on manual tracking. Start calling smarter with AI-powered reports and WhatsApp integration.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-sky-500 text-white hover:bg-sky-600 border-none">
-            <a href="/book-demo?product=DialKaro" target="_blank" rel="noopener noreferrer"></a>
-            Book a Demo & Start 7-Day Trial
+          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-sky-500 text-white hover:bg-sky-600 border-none px-8 py-6 text-lg" asChild>
+            <Link href="/book-demo?product=DialKaro" target="_blank" rel="noopener noreferrer">
+              Book a Demo & Start 7-Day Trial
+            </Link>
           </Button>
-
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Receipt, Mic, Banknote, Clock, Calculator, ShieldCheck, FileText, Smartphone } from "lucide-react";
 
 export const metadata = {
@@ -32,9 +33,10 @@ export default function BillKaroPage() {
           Indian SMEs lose <strong className="text-red-400 font-semibold">₹2.8 lakh/year</strong> in uncollected payments. BillKaro turns WhatsApp into your invoicing + collection machine — <strong className="text-emerald-400">zero app downloads</strong>.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10 mb-16">
-          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-500 text-black hover:bg-emerald-400 border-none font-bold">
-            <a href="/book-demo?product=BillKaro" target="_blank" rel="noopener noreferrer"></a>
-            Book a Demo & Start Free Trial
+          <Button variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-500 text-black hover:bg-emerald-400 border-none font-bold px-8 py-6 text-lg" asChild>
+            <Link href="/book-demo?product=BillKaro" target="_blank" rel="noopener noreferrer">
+              Book a Demo & Start Free Trial
+            </Link>
           </Button>
           {/* <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
             <a href="https://wa.me/919452661608?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20BillKaro." target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center">
