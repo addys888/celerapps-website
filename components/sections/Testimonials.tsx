@@ -10,7 +10,7 @@ const TESTIMONIALS = [
     name: "Rajesh Sharma",
     role: "DSA Team Lead",
     company: "FinLink DSA, Lucknow",
-    avatar: "RS", 
+    avatar: "RS",
     avatarBg: "#0ea5e9",
     rating: 5,
     text: "Before DialKaro, my 12-member team would manually dial from Excel all day. Now they call 3× more leads before lunch. The AI summary at end of day saves 45 minutes of reporting.",
@@ -20,7 +20,7 @@ const TESTIMONIALS = [
     name: "Priya Mehta",
     role: "Founder",
     company: "Mehta Interiors, Pune",
-    avatar: "PM", 
+    avatar: "PM",
     avatarBg: "#6366f1",
     rating: 5,
     text: "BillKaro changed how I collect payments. I send the invoice on WhatsApp and clients pay in minutes via UPI. My overdue invoices dropped from 40% to under 8% in two months.",
@@ -30,7 +30,7 @@ const TESTIMONIALS = [
     name: "Amit Gupta",
     role: "Sales Manager",
     company: "PropVista Realty, Noida",
-    avatar: "AG", 
+    avatar: "AG",
     avatarBg: "#10b981",
     rating: 5,
     text: "Our channel partners were losing leads because follow-ups weren't happening. DialKaro solved it completely. The jump-to-any-lead feature is brilliant for prioritizing hot leads.",
@@ -40,7 +40,7 @@ const TESTIMONIALS = [
     name: "Sunita Iyer",
     role: "Chartered Accountant",
     company: "Iyer & Associates, Chennai",
-    avatar: "SI", 
+    avatar: "SI",
     avatarBg: "#f59e0b",
     rating: 5,
     text: "I was using Tally + Excel + WhatsApp separately. BillKaro combined everything. GST-ready invoices sent on WhatsApp with UPI payment link — my clients love how professional it looks.",
@@ -50,7 +50,7 @@ const TESTIMONIALS = [
     name: "Mohammed Farouk",
     role: "Director",
     company: "Farouk FMCG Distributors, Hyderabad",
-    avatar: "MF", 
+    avatar: "MF",
     avatarBg: "#ec4899",
     rating: 5,
     text: "My sales team covers 200+ retailers weekly. DialKaro's session resume feature is a lifesaver — if the call drops or battery dies, they just continue from where they left off. Zero lead lost.",
@@ -60,7 +60,7 @@ const TESTIMONIALS = [
     name: "Kavya Nair",
     role: "EdTech Counsellor Lead",
     company: "BrightPath Academy, Bengaluru",
-    avatar: "KN", 
+    avatar: "KN",
     avatarBg: "#a855f7",
     rating: 5,
     text: "We generate 400+ Meta ad leads per week. DialKaro + BillKaro together is a complete pipeline — our counsellors call faster and when a student enrolls, BillKaro handles fee collection automatically.",
@@ -77,17 +77,17 @@ const PRODUCT_BADGE: { [key: string]: string } = {
 export function Testimonials() {
   return (
     <section className="section relative overflow-hidden">
-      <div 
-        className="absolute inset-0 pointer-events-none" 
-        style={{ background: "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(99,102,241,0.06), transparent)" }} 
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(99,102,241,0.06), transparent)" }}
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 28 }} 
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} 
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -105,7 +105,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }} 
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.55, delay: (i % 3) * 0.1 }}
@@ -128,8 +128,8 @@ export function Testimonials() {
 
               {/* Footer */}
               <div className="flex items-center gap-3">
-                <div 
-                  className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" 
+                <div
+                  className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
                   style={{ background: t.avatarBg }}
                 >
                   {t.avatar}
@@ -148,9 +148,9 @@ export function Testimonials() {
 
         {/* Bottom trust */}
         <motion.div
-          initial={{ opacity: 0 }} 
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} 
+          viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-12 text-center"
         >
@@ -161,7 +161,7 @@ export function Testimonials() {
               ))}
             </div>
             <p className="text-sm text-slate-400">
-              Join <span className="text-white font-semibold">10,000+</span> businesses already using CelerApps
+              Join <span className="text-white font-semibold">50+</span> businesses already using CelerApps
             </p>
           </div>
         </motion.div>

@@ -10,10 +10,10 @@ export function CTABanner() {
     <section className="section relative overflow-hidden">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity:0, y:40, scale:0.97 }}
-          whileInView={{ opacity:1, y:0, scale:1 }}
-          viewport={{ once:true }}
-          transition={{ duration:0.7, ease:[0.22,1,0.36,1] }}
+          initial={{ opacity: 0, y: 40, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative rounded-3xl overflow-hidden text-center px-8 py-16 sm:py-20"
           style={{
             background: "linear-gradient(135deg, #0c1628 0%, #0e0c26 50%, #0c1628 100%)",
@@ -26,7 +26,7 @@ export function CTABanner() {
           <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
 
           {/* Border glow */}
-          <div className="absolute inset-0 rounded-3xl pointer-events-none" style={{boxShadow:"inset 0 0 80px rgba(99,102,241,0.08), 0 0 80px rgba(14,165,233,0.08)"}} />
+          <div className="absolute inset-0 rounded-3xl pointer-events-none" style={{ boxShadow: "inset 0 0 80px rgba(99,102,241,0.08), 0 0 80px rgba(14,165,233,0.08)" }} />
 
           <div className="relative">
             {/* Icon cluster */}
@@ -49,7 +49,7 @@ export function CTABanner() {
             </h2>
 
             <p className="text-slate-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-              Join 10,000+ Indian businesses already running faster, selling smarter, and collecting payments effortlessly — with CelerApps.
+              Join 50+ Indian businesses already running faster, selling smarter, and collecting payments effortlessly — with CelerApps.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">

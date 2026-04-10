@@ -70,7 +70,7 @@ function BookDemoContent() {
   return (
     <main className="relative bg-[#050810] min-h-screen">
       <Navbar />
-      
+
       {/* Success Modal Overlay */}
       <AnimatePresence>
         {isSuccess && (
@@ -114,7 +114,7 @@ function BookDemoContent() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            
+
             {/* Left Side: Pitch */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -130,7 +130,7 @@ function BookDemoContent() {
                   See <span className="gradient-text">DialKaro</span> In <span className="text-emerald-400">Action</span>
                 </h1>
                 <p className="text-xl text-slate-400 leading-relaxed max-w-xl">
-                  Discover how 10,000+ sales reps are saving 58 minutes every single day. Book a personalized 1-on-1 demo with our product specialists.
+                  Discover how 250+ sales reps are saving 58 minutes every single day. Book a personalized 1-on-1 demo with our product specialists.
                 </p>
               </div>
 
@@ -162,7 +162,7 @@ function BookDemoContent() {
               <div className="relative p-1 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-[2.5rem] overflow-hidden">
                 <div className="bg-[#0c111d]/95 backdrop-blur-3xl rounded-[2.3rem] p-8 sm:p-10 border border-white/5">
                   <h2 className="text-2xl font-bold text-white mb-8">Book your demo slot</h2>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div className="space-y-2">
@@ -175,7 +175,7 @@ function BookDemoContent() {
                             placeholder="Enter your name"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.name}
-                            onChange={(e) => setForm({...form, name: e.target.value})}
+                            onChange={(e) => setForm({ ...form, name: e.target.value })}
                           />
                         </div>
                       </div>
@@ -189,7 +189,7 @@ function BookDemoContent() {
                             placeholder="Enter company name"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.company}
-                            onChange={(e) => setForm({...form, company: e.target.value})}
+                            onChange={(e) => setForm({ ...form, company: e.target.value })}
                           />
                         </div>
                       </div>
@@ -206,7 +206,7 @@ function BookDemoContent() {
                             placeholder="Enter work email"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.email}
-                            onChange={(e) => setForm({...form, email: e.target.value})}
+                            onChange={(e) => setForm({ ...form, email: e.target.value })}
                           />
                         </div>
                       </div>
@@ -220,7 +220,7 @@ function BookDemoContent() {
                             placeholder="+91 00000 00000"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.phone}
-                            onChange={(e) => setForm({...form, phone: e.target.value})}
+                            onChange={(e) => setForm({ ...form, phone: e.target.value })}
                           />
                         </div>
                       </div>
@@ -231,7 +231,7 @@ function BookDemoContent() {
                       <select
                         className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 appearance-none transition-all cursor-pointer"
                         value={form.product}
-                        onChange={(e) => setForm({...form, product: e.target.value})}
+                        onChange={(e) => setForm({ ...form, product: e.target.value })}
                       >
                         <option className="bg-[#0c111d] text-white">DialKaro (AI Sales Dialer)</option>
                         <option className="bg-[#0c111d] text-white">BillKaro (WhatsApp Invoicing)</option>
@@ -248,7 +248,7 @@ function BookDemoContent() {
                           placeholder="Briefly describe your requirements..."
                           className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all resize-none"
                           value={form.message}
-                          onChange={(e) => setForm({...form, message: e.target.value})}
+                          onChange={(e) => setForm({ ...form, message: e.target.value })}
                         />
                       </div>
                     </div>

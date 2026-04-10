@@ -20,12 +20,12 @@ function useCountUp(target: number, duration = 2000, start = false) {
 }
 
 const STATS = [
-  { label: "Businesses Trust Us",  value: 500,  suffix: "+",   prefix: "",  decimals: 0, display: "50+" },
-  { label: "Invoices Sent",         value: 12,    suffix: "K+",  prefix: "",  decimals: 1, display: "12K+" },
-  { label: "Payment Recovery Rate", value: 98,     suffix: "%",   prefix: "",  decimals: 0, display: "98%"   },
-  { label: "Average Rating",        value: 4.9,    suffix: "/5",  prefix: "",  decimals: 1, display: "4.9"   },
-  { label: "States Covered",        value: 3,     suffix: "+",   prefix: "",  decimals: 0, display: "3+"   },
-  { label: "Calls Made Daily",      value: 50,     suffix: "K+",  prefix: "",  decimals: 0, display: "50K+"  },
+  { label: "Businesses Trust Us", value: 500, suffix: "+", prefix: "", decimals: 0, display: "50+" },
+  { label: "Invoices Sent", value: 5, suffix: "K+", prefix: "", decimals: 1, display: "5K+" },
+  { label: "Payment Recovery Rate", value: 98, suffix: "%", prefix: "", decimals: 0, display: "98%" },
+  { label: "Average Rating", value: 4.9, suffix: "/5", prefix: "", decimals: 1, display: "4.9" },
+  { label: "States Covered", value: 3, suffix: "+", prefix: "", decimals: 0, display: "3+" },
+  { label: "Calls Made Daily", value: 5, suffix: "K+", prefix: "", decimals: 0, display: "5K+" },
 ];
 
 function StatItem({ stat, delay }: { stat: typeof STATS[0]; delay: number }) {
@@ -35,10 +35,10 @@ function StatItem({ stat, delay }: { stat: typeof STATS[0]; delay: number }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity:0, y:32 }}
-      whileInView={{ opacity:1, y:0 }}
-      viewport={{ once:true }}
-      transition={{ duration:0.6, delay }}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
       className="text-center group"
     >
       <div className="relative inline-block">
@@ -61,13 +61,13 @@ export function Stats() {
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
 
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none" style={{background:"linear-gradient(135deg, rgba(14,165,233,0.04) 0%, rgba(99,102,241,0.04) 50%, rgba(168,85,247,0.04) 100%)"}} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.04) 0%, rgba(99,102,241,0.04) 50%, rgba(168,85,247,0.04) 100%)" }} />
       <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.p
-          initial={{ opacity:0 }} whileInView={{ opacity:1 }}
-          viewport={{ once:true }}
+          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           className="text-center text-xs font-semibold uppercase tracking-widest text-slate-500 mb-12"
         >
           Numbers that speak for themselves
