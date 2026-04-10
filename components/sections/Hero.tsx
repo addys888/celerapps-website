@@ -36,18 +36,18 @@ function DialKaroCard() {
           <p className="text-[11px] font-semibold text-white">Ramesh Verma</p>
           <p className="text-[9px] text-sky-400 mt-0.5">+91 987•• ••210</p>
           <div className="flex gap-0.5 mt-1.5 items-end h-4">
-            {[3,6,9,5,8,4,7,10,6,8,4,6].map((h,i)=>(
-              <div key={i} className="flex-1 rounded-sm bg-sky-500/50" style={{height:`${h*1.5}px`}} />
+            {[3, 6, 9, 5, 8, 4, 7, 10, 6, 8, 4, 6].map((h, i) => (
+              <div key={i} className="flex-1 rounded-sm bg-sky-500/50" style={{ height: `${h * 1.5}px` }} />
             ))}
           </div>
         </div>
         <div className="grid grid-cols-2 gap-1">
-          {["🟢 Int.","🔔 CB","📵 NA","🔴 NI"].map((o,i)=>(
-            <button key={i} className={`text-[8px] py-1 px-1 rounded-lg border text-center ${i===0?"border-emerald-500/40 bg-emerald-500/10 text-emerald-300 font-medium":"border-white/[0.07] bg-white/[0.02] text-slate-500"}`}>{o}</button>
+          {["🟢 Int.", "🔔 CB", "📵 NA", "🔴 NI"].map((o, i) => (
+            <button key={i} className={`text-[8px] py-1 px-1 rounded-lg border text-center ${i === 0 ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300 font-medium" : "border-white/[0.07] bg-white/[0.02] text-slate-500"}`}>{o}</button>
           ))}
         </div>
         <div className="grid grid-cols-3 bg-white/[0.03] rounded-xl divide-x divide-white/[0.06]">
-          {[["47","Called"],["8","Hot"],["12","Left"]].map(([v,l])=>(
+          {[["47", "Called"], ["8", "Hot"], ["12", "Left"]].map(([v, l]) => (
             <div key={l} className="py-1.5 text-center">
               <p className="text-[11px] font-bold text-white">{v}</p>
               <p className="text-[8px] text-slate-500">{l}</p>
@@ -91,13 +91,13 @@ function BillKaroCard() {
         </div>
         <div className="flex items-center gap-1 bg-green-500/10 border border-green-500/20 rounded-xl px-2 py-1.5">
           <div className="h-3.5 w-3.5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-            <svg viewBox="0 0 24 24" className="h-2 w-2 fill-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.1 8.1 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+            <svg viewBox="0 0 24 24" className="h-2 w-2 fill-white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.1 8.1 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" /></svg>
           </div>
           <span className="text-[8px] text-green-400 font-medium">Via WhatsApp</span>
         </div>
         <div className="flex items-end gap-0.5 h-7">
-          {[30,55,40,70,50,85,65].map((h,i)=>(
-            <div key={i} className="flex-1 rounded-t-sm" style={{height:`${h}%`, background: i===5?"rgba(99,102,241,0.85)":"rgba(99,102,241,0.2)"}} />
+          {[30, 55, 40, 70, 50, 85, 65].map((h, i) => (
+            <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, background: i === 5 ? "rgba(99,102,241,0.85)" : "rgba(99,102,241,0.2)" }} />
           ))}
         </div>
       </div>
@@ -106,7 +106,7 @@ function BillKaroCard() {
 }
 
 /* ─── Floating Badge ─── */
-function FloatBadge({ children, className, delay=0 }: { children: React.ReactNode; className: string; delay?: number }) {
+function FloatBadge({ children, className, delay = 0 }: { children: React.ReactNode; className: string; delay?: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -124,9 +124,9 @@ export function Hero() {
   const { isLoading } = useLoading();
 
   const fadeUp = (delay = 0) => ({
-    initial:    { opacity: 0, y: 28 },
-    animate:    isLoading ? { opacity: 0, y: 28 } : { opacity: 1, y:  0 },
-    transition: { duration: 0.6, delay: delay + 0.2, ease: [0.22,1,0.36,1] },
+    initial: { opacity: 0, y: 28 },
+    animate: isLoading ? { opacity: 0, y: 28 } : { opacity: 1, y: 0 },
+    transition: { duration: 0.6, delay: delay + 0.2, ease: [0.22, 1, 0.36, 1] },
   });
 
   return (
@@ -136,7 +136,7 @@ export function Hero() {
       {/* Backgrounds */}
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none"
-        style={{background:"radial-gradient(ellipse 90% 55% at 50% -5%, rgba(14,165,233,0.12), transparent)"}} />
+        style={{ background: "radial-gradient(ellipse 90% 55% at 50% -5%, rgba(14,165,233,0.12), transparent)" }} />
       <div className="absolute top-1/4 -left-72 w-[560px] h-[560px] rounded-full bg-sky-600/8 blur-[130px] pointer-events-none" />
       <div className="absolute top-1/3 -right-40 w-[440px] h-[440px] rounded-full bg-indigo-600/8 blur-[110px] pointer-events-none" />
 
@@ -187,23 +187,23 @@ export function Hero() {
             <motion.div {...fadeUp(0.35)}>
               <div className="flex items-center gap-3 mb-3">
                 <div className="flex -space-x-1.5">
-                  {[["R","#0ea5e9"],["P","#6366f1"],["A","#10b981"],["S","#f59e0b"],["M","#ec4899"]].map(([l,c],i)=>(
-                    <div key={i} className="h-7 w-7 sm:h-8 sm:w-8 rounded-full border-2 border-[#050810] flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-white" style={{background:c}}>{l}</div>
+                  {[["R", "#0ea5e9"], ["P", "#6366f1"], ["A", "#10b981"], ["S", "#f59e0b"], ["M", "#ec4899"]].map(([l, c], i) => (
+                    <div key={i} className="h-7 w-7 sm:h-8 sm:w-8 rounded-full border-2 border-[#050810] flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-white" style={{ background: c }}>{l}</div>
                   ))}
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_,i)=><Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />)}
                     <span className="text-xs font-semibold text-white ml-1">4.9/5</span>
                   </div>
                   <p className="text-xs text-slate-500">
-                    Trusted by <span className="text-white font-semibold">10,000+</span> Indian businesses
+                    Trusted by <span className="text-white font-semibold">50+</span> Indian businesses
                   </p>
                 </div>
               </div>
               {/* ✅ FIX 4: Logo pills wrap correctly on mobile */}
               <div className="flex flex-wrap gap-2">
-                {["Reliance DSA","HDFC Partners","BajajFin Network","EdTech Hub","RE Brokers"].map(logo=>(
+                {["Reliance DSA", "HDFC Partners", "BajajFin Network", "EdTech Hub", "RE Brokers"].map(logo => (
                   <span key={logo} className="px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.07] text-[11px] text-slate-500">
                     {logo}
                   </span>
@@ -217,7 +217,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isLoading ? { opacity: 0, x: 40 } : { opacity: 1, x: 0 }}
-            transition={{ duration: 0.85, delay: 0.4, ease: [0.22,1,0.36,1] }}
+            transition={{ duration: 0.85, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="hidden lg:flex relative justify-center items-start min-h-[460px]"
           >
             {/* Glow */}
