@@ -54,14 +54,14 @@ export function CTABanner() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
               <Button variant="primary" size="xl" asChild>
-                <Link href="/dialkaro" className="gap-2.5">
+                <Link href="/book-demo?product=DialKaro" className="gap-2.5">
                   <Phone className="h-5 w-5" />
                   Start with DialKaro
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
               <Button variant="secondary" size="xl" asChild>
-                <Link href="/billkaro" className="gap-2.5">
+                <Link href="/book-demo?product=BillKaro" className="gap-2.5">
                   <FileText className="h-5 w-5" />
                   Start with BillKaro
                 </Link>

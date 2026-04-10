@@ -233,7 +233,7 @@ export function Products() {
                 <div className="flex gap-3">
                   <Button variant="primary" size="md" asChild className="flex-1"
                     style={{background:`linear-gradient(135deg,${p.from},${p.to})`}}>
-                    <Link href={p.href} className="gap-2">
+                    <Link href={`/book-demo?product=${p.name}`} className="gap-2">
                       Try Free <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>

@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, Calendar, ArrowRight, CheckCircle2, Building2, User2, MessageSquare, MonitorPlay } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,15 +8,26 @@ import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 
-export default function BookADemoPage() {
+function BookDemoContent() {
+  const searchParams = useSearchParams();
   const [form, setForm] = useState({
     name: "",
     company: "",
     email: "",
     phone: "",
-    product: "DialKaro",
+    product: "DialKaro (AI Sales Dialer)",
     message: "",
   });
+
+  useEffect(() => {
+    const productParam = searchParams.get("product");
+    if (productParam === "DialKaro") {
+      setForm(prev => ({ ...prev, product: "DialKaro (AI Sales Dialer)" }));
+    } else if (productParam === "BillKaro") {
+      setForm(prev => ({ ...prev, product: "BillKaro (WhatsApp Invoicing)" }));
+    }
+  }, [searchParams]);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -40,7 +52,7 @@ export default function BookADemoPage() {
           company: "",
           email: "",
           phone: "",
-          product: "DialKaro",
+          product: "DialKaro (AI Sales Dialer)",
           message: "",
         });
       } else {
@@ -267,5 +279,13 @@ export default function BookADemoPage() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function BookADemoPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#050810]" />}>
+      <BookDemoContent />
+    </Suspense>
   );
 }

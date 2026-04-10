@@ -169,14 +169,14 @@ export function Hero() {
             {/* ✅ FIX 3: Buttons stack properly on mobile with flex-col sm:flex-row */}
             <motion.div {...fadeUp(0.24)} className="flex flex-col sm:flex-row gap-3 mb-10">
               <Button variant="primary" size="lg" asChild className="w-full sm:w-auto">
-                <Link href="/dialkaro" className="gap-2 justify-center">
+                <Link href="/book-demo?product=DialKaro" className="gap-2 justify-center">
                   <Phone className="h-4 w-4" />
                   Try DialKaro Free
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="secondary" size="lg" asChild className="w-full sm:w-auto">
-                <Link href="/billkaro" className="gap-2 justify-center">
+                <Link href="/book-demo?product=BillKaro" className="gap-2 justify-center">
                   <FileText className="h-4 w-4" />
                   Try BillKaro Free
                 </Link>

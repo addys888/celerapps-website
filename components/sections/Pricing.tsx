@@ -22,7 +22,7 @@ const DIALKARO_PLANS = [
     buttonText: "Get Started →",
     popular: false,
     color: "sky",
-    href: "/#products"
+    href: "/book-demo?product=DialKaro"
   },
   {
     name: "Pro",
@@ -39,7 +39,7 @@ const DIALKARO_PLANS = [
     buttonText: "Get Started →",
     popular: true,
     color: "sky",
-    href: "/#products"
+    href: "/book-demo?product=DialKaro"
   },
   {
     name: "Enterprise",
@@ -56,7 +56,7 @@ const DIALKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "sky",
-    href: "mailto:hello@celerapps.com?subject=Enterprise%20Plan%20Inquiry" // Triggers email client
+    href: "/book-demo?product=DialKaro"
   },
 ];
 
@@ -76,7 +76,7 @@ const BILLKARO_PLANS = [
     buttonText: "Get Started Free →",
     popular: false,
     color: "emerald",
-    href: "/#products"
+    href: "/book-demo?product=DialKaro"
   },
   {
     name: "Pro",
@@ -93,7 +93,7 @@ const BILLKARO_PLANS = [
     buttonText: "Start 7-Day Trial →",
     popular: true,
     color: "emerald",
-    href: "/#products"
+    href: "/book-demo?product=DialKaro"
   },
   {
     name: "Business",
@@ -110,7 +110,7 @@ const BILLKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "emerald",
-    href: "mailto:hello@celerapps.com?subject=Business%20Plan%20Inquiry"
+    href: "/book-demo?product=BillKaro"
   },
 ];
 
