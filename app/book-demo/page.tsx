@@ -30,6 +30,8 @@ export default function BookADemoPage() {
         body: JSON.stringify(form),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         setIsSuccess(true);
         // Clear form after success
@@ -42,7 +44,8 @@ export default function BookADemoPage() {
           message: "",
         });
       } else {
-        alert("Something went wrong. Please try again or email us directly at hello@celerapps.com");
+        const errorMsg = result.error || "Internal Server Error";
+        alert(`Submit Error: ${errorMsg}\n\nTroubleshooting:\n1. Ensure RESEND_API_KEY is correct in Vercel.\n2. In 'onboarding' mode, you can only send to your own signup email.\n3. Verify your domain on Resend dashboard to send to hello@celerapps.com.`);
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -59,7 +62,7 @@ export default function BookADemoPage() {
       {/* Success Modal Overlay */}
       <AnimatePresence>
         {isSuccess && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[999] flex items-center justify-center p-6 sm:p-12">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -71,7 +74,7 @@ export default function BookADemoPage() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-md bg-[#0c111d] border border-emerald-500/20 rounded-[2.5rem] p-10 text-center shadow-2xl"
+              className="relative w-full max-w-lg bg-[#0c111d] border border-emerald-500/30 rounded-[3rem] p-12 text-center shadow-[0_0_50px_rgba(16,185,129,0.15)]"
             >
               <div className="h-20 w-20 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-6 border border-emerald-500/20">
                 <CheckCircle2 className="h-10 w-10 text-emerald-400" />
@@ -157,7 +160,7 @@ export default function BookADemoPage() {
                           <input
                             type="text"
                             required
-                            placeholder="Your Name"
+                            placeholder="Enter your name"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.name}
                             onChange={(e) => setForm({...form, name: e.target.value})}
@@ -171,7 +174,7 @@ export default function BookADemoPage() {
                           <input
                             type="text"
                             required
-                            placeholder="Company Name"
+                            placeholder="Enter company name"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.company}
                             onChange={(e) => setForm({...form, company: e.target.value})}
@@ -188,7 +191,7 @@ export default function BookADemoPage() {
                           <input
                             type="email"
                             required
-                            placeholder="email@company.com"
+                            placeholder="Enter work email"
                             className="w-full bg-white/[0.03] border border-white/[0.08] rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all"
                             value={form.email}
                             onChange={(e) => setForm({...form, email: e.target.value})}

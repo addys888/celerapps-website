@@ -114,7 +114,7 @@ export function Contact() {
                     <input
                       type="text"
                       required
-                      placeholder="John Doe"
+                      placeholder="Enter your name"
                       className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -125,7 +125,7 @@ export function Contact() {
                     <input
                       type="email"
                       required
-                      placeholder="john@company.com"
+                      placeholder="name@company.com"
                       className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -139,7 +139,7 @@ export function Contact() {
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 00000 00000"
                       className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}

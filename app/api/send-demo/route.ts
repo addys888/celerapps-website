@@ -7,8 +7,8 @@ export async function POST(req: Request) {
   try {
     const { name, email, phone, company, product, message } = await req.json();
 
-    const data = await resend.emails.send({
-      from: 'CelerApps Demo <onboarding@resend.dev>', // Replace with your verified domain once ready
+    const { data, error } = await resend.emails.send({
+      from: 'CelerApps Demo <onboarding@resend.dev>',
       to: ['hello@celerapps.com'],
       subject: `New Demo Request: ${product} - ${company}`,
       html: `
@@ -32,8 +32,14 @@ export async function POST(req: Request) {
       `,
     });
 
-    return NextResponse.json(data);
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    if (error) {
+      console.error('Resend Error:', error);
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    }
+
+    return NextResponse.json({ success: true, id: data?.id });
+  } catch (err: any) {
+    console.error('Server Catch Error:', err);
+    return NextResponse.json({ error: err.message || 'Failed to send email' }, { status: 500 });
   }
 }
