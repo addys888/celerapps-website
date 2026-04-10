@@ -15,15 +15,15 @@ export default function BillKaroPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#050810]">
       <Navbar />
-      
+
       {/* 1. HERO SECTION WITH GLOWING MOCKUP */}
       <section className="pt-32 pb-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 30%, rgba(37, 211, 102, 0.1), transparent 50%)" }} />
-        
+
         <div className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 mb-6 relative z-10 tracking-wide uppercase">
           BillKaro By CelerApps
         </div>
-        
+
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight relative z-10">
           WhatsApp pe Bill Banao,<br className="hidden md:block" />
           <span className="text-emerald-400">Paisa Apne Aap Pao</span>
@@ -33,22 +33,23 @@ export default function BillKaroPage() {
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10 mb-16">
           <Button variant="primary" size="lg" className="w-full sm:w-auto bg-emerald-500 text-black hover:bg-emerald-400 border-none font-bold">
-            Start Free Forever Plan
+            <a href="/book-demo?product=BillKaro" target="_blank" rel="noopener noreferrer"></a>
+            Book a Demo & Start Free Trial
           </Button>
-          <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
+          {/* <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
             <a href="https://wa.me/919452661608?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20BillKaro." target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center">
               Book a Demo
             </a>
-          </Button>
+          </Button> */}
         </div>
 
         {/* The Glowing Hero Image Mockup */}
         <div className="relative max-w-5xl mx-auto w-full z-10">
           <div className="absolute inset-0 bg-emerald-500/20 blur-[100px] -z-10 rounded-full" />
           <div className="rounded-2xl border border-white/[0.08] bg-[#0a0d1a]/80 backdrop-blur-sm p-2 shadow-2xl relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
-          <HeroImage />
-        </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
+            <HeroImage />
+          </div>
         </div>
       </section>
 
@@ -83,7 +84,7 @@ export default function BillKaroPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Three steps. Ten seconds.</h2>
             <p className="text-slate-400">No app. No learning curve. Just talk to your WhatsApp assistant.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
               <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl mx-auto mb-6">1</div>
@@ -91,14 +92,14 @@ export default function BillKaroPage() {
               <p className="text-sm text-slate-400 mb-6 leading-relaxed">&quot;Bill 5000 to Rahul for AC repair&quot; — send a text or voice note in Hindi, English, or Hinglish.</p>
               <Mic className="w-8 h-8 text-slate-600 mx-auto" />
             </div>
-            
+
             <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
               <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl mx-auto mb-6">2</div>
               <h3 className="text-xl font-bold text-white mb-3">Confirm</h3>
               <p className="text-sm text-slate-400 mb-6 leading-relaxed">AI parses the amount, client, items, and GST automatically. Review the preview and tap Send.</p>
               <FileText className="w-8 h-8 text-slate-600 mx-auto" />
             </div>
-            
+
             <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
               <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl mx-auto mb-6">3</div>
               <h3 className="text-xl font-bold text-white mb-3">Get Paid</h3>
@@ -116,7 +117,7 @@ export default function BillKaroPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Power Features</h2>
             <p className="text-slate-400">Everything you need to get paid faster without the headache.</p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: Receipt, title: "PDF Invoices", desc: "GST-compliant with QR code" },

@@ -12,15 +12,15 @@ export default function DialKaroPage() {
   return (
     <main className="min-h-screen flex flex-col bg-[#050810]">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 30%, rgba(14, 165, 233, 0.1), transparent 50%)" }} />
-        
+
         <div className="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-400 mb-6 relative z-10 tracking-wide uppercase">
           DialKaro By CelerApps
         </div>
-        
+
         <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight relative z-10">
           The Sales Calling Tool <br className="hidden md:block" />
           <span className="text-sky-400">Your Team Deserves</span>
@@ -28,15 +28,12 @@ export default function DialKaroPage() {
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed">
           Stop wasting <strong className="text-red-400 font-semibold">58 minutes every day</strong> per rep on manual tracking. Start calling smarter with AI-powered reports and WhatsApp integration.
         </p>
-       <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
+        <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
           <Button variant="primary" size="lg" className="w-full sm:w-auto bg-sky-500 text-white hover:bg-sky-600 border-none">
-            Start 7-Day Trial
+            <a href="/book-demo?product=DialKaro" target="_blank" rel="noopener noreferrer"></a>
+            Book a Demo & Start 7-Day Trial
           </Button>
-          <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
-            <a href="https://wa.me/919452661608?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20DialKaro." target="_blank" rel="noopener noreferrer">
-              Book a Demo
-            </a>
-          </Button>
+
         </div>
       </section>
 
@@ -71,7 +68,7 @@ export default function DialKaroPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Three steps. That&apos;s it.</h2>
             <p className="text-slate-400">A lightweight, WhatsApp-first calling assistant simpler than the apps on your reps&apos; phones.</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
               <div className="w-12 h-12 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-xl mx-auto mb-6">1</div>
@@ -79,14 +76,14 @@ export default function DialKaroPage() {
               <p className="text-sm text-slate-400 mb-6 leading-relaxed">Drag Excel/CSV file. Toggle for international numbers. Smart validation flags errors and auto-deduplicates.</p>
               <FileSpreadsheet className="w-8 h-8 text-slate-600 mx-auto" />
             </div>
-            
+
             <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
               <div className="w-12 h-12 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-xl mx-auto mb-6">2</div>
               <h3 className="text-xl font-bold text-white mb-3">Call & Tag</h3>
               <p className="text-sm text-slate-400 mb-6 leading-relaxed">One-tap call. Tag outcome. Add notes. Timer tracks duration. Schedule callbacks directly in the app.</p>
               <PhoneCall className="w-8 h-8 text-slate-600 mx-auto" />
             </div>
-            
+
             <div className="bg-[#0a0d1a] border border-white/[0.08] rounded-2xl p-8 text-center">
               <div className="w-12 h-12 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-bold text-xl mx-auto mb-6">3</div>
               <h3 className="text-xl font-bold text-white mb-3">AI Report</h3>
@@ -104,7 +101,7 @@ export default function DialKaroPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Power Features</h2>
             <p className="text-slate-400">Everything your team needs to scale calling operations.</p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: MessageSquare, title: "WhatsApp Native", desc: "One-tap messages in 6 languages" },

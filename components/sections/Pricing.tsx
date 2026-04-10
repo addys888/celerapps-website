@@ -56,7 +56,7 @@ const DIALKARO_PLANS = [
     buttonText: "Contact Us →",
     popular: false,
     color: "sky",
-    href: "/book-demo?product=DialKaro"
+    href: "/contact"
   },
 ];
 
@@ -121,13 +121,13 @@ export function Pricing() {
   return (
     <section id="pricing" className="section relative py-24 overflow-hidden border-t border-white/[0.08]">
       {/* Background Glow */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full blur-[120px] -z-10 transition-colors duration-700 pointer-events-none"
         style={{ background: activeTab === "dialkaro" ? "rgba(14, 165, 233, 0.05)" : "rgba(16, 185, 129, 0.05)" }}
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-10">
           <Badge variant="brand" className="mb-4">Simple Pricing</Badge>
@@ -142,19 +142,19 @@ export function Pricing() {
         {/* Tab Switcher */}
         <div className="flex justify-center mb-16">
           <div className="inline-flex bg-[#0a0d1a] border border-white/[0.08] p-1.5 rounded-2xl relative z-10 shadow-xl">
-            <button 
-              onClick={() => setActiveTab("dialkaro")} 
+            <button
+              onClick={() => setActiveTab("dialkaro")}
               className={cn(
-                "px-8 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300", 
+                "px-8 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300",
                 activeTab === "dialkaro" ? "bg-sky-500/15 text-sky-400 shadow-sm" : "text-slate-400 hover:text-white"
               )}
             >
               DialKaro Plans
             </button>
-            <button 
-              onClick={() => setActiveTab("billkaro")} 
+            <button
+              onClick={() => setActiveTab("billkaro")}
               className={cn(
-                "px-8 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300", 
+                "px-8 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300",
                 activeTab === "billkaro" ? "bg-emerald-500/15 text-emerald-400 shadow-sm" : "text-slate-400 hover:text-white"
               )}
             >
@@ -175,7 +175,7 @@ export function Pricing() {
                 transition={{ duration: 0.3, delay: i * 0.1 }}
                 className={cn(
                   "relative flex flex-col p-8 rounded-3xl border bg-[#0a0d1a] h-full transition-all duration-300",
-                  plan.popular 
+                  plan.popular
                     ? activeTab === "dialkaro" ? "border-sky-500/40 shadow-[0_0_40px_rgba(14,165,233,0.1)] scale-105 z-10" : "border-emerald-500/40 shadow-[0_0_40px_rgba(16,185,129,0.1)] scale-105 z-10"
                     : "border-white/[0.08] hover:border-white/[0.2] scale-100"
                 )}
@@ -206,7 +206,7 @@ export function Pricing() {
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-sm text-slate-300">
                         <Check className={cn(
-                          "w-5 h-5 flex-shrink-0 mt-0.5", 
+                          "w-5 h-5 flex-shrink-0 mt-0.5",
                           activeTab === "dialkaro" ? "text-sky-400" : "text-emerald-400"
                         )} />
                         <span>{feature}</span>
@@ -223,11 +223,11 @@ export function Pricing() {
                 )}>
                   {plan.buttonText}
                 </button> */}
-                <a 
+                <a
                   href={plan.href}
                   className={cn(
                     "w-full py-3 px-6 rounded-xl text-sm font-bold transition-all duration-200 text-center block",
-                    plan.popular 
+                    plan.popular
                       ? activeTab === "dialkaro" ? "bg-sky-500 text-black hover:bg-sky-400" : "bg-emerald-500 text-black hover:bg-emerald-400"
                       : "bg-white/[0.05] text-white border border-white/[0.1] hover:bg-white/[0.1]"
                   )}
