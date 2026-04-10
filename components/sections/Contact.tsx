@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageSquare, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -16,29 +16,77 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent, type: "whatsapp" | "email") => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const fullMessage = `Hi CelerApps Team,\n\nMy name is ${form.name}.\nEmail: ${form.email}\nPhone: ${form.phone}\nSubject: ${form.subject}\n\nMessage: ${form.message}`;
+    try {
+      const response = await fetch("/api/send-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    if (type === "whatsapp") {
-      const url = `https://wa.me/919452661608?text=${encodeURIComponent(fullMessage)}`;
-      window.open(url, "_blank");
-    } else {
-      const url = `mailto:hello@celerapps.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(fullMessage)}`;
-      window.location.href = url;
-    }
+      const result = await response.json();
 
-    setTimeout(() => {
+      if (response.ok) {
+        setIsSuccess(true);
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "General Inquiry",
+          message: "",
+        });
+      } else {
+        const errorMsg = result.error || "Internal Server Error";
+        alert(`Submit Error: ${errorMsg}`);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1000);
+    }
   };
 
   return (
     <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Success Modal Overlay */}
+      <AnimatePresence>
+        {isSuccess && (
+          <div className="fixed inset-0 z-[999] flex items-center justify-center p-6 sm:p-12">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsSuccess(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-lg bg-[#0c111d] border border-sky-500/30 rounded-[3rem] p-12 text-center shadow-[0_0_50px_rgba(14,165,233,0.15)]"
+            >
+              <div className="h-20 w-20 rounded-full bg-sky-500/10 flex items-center justify-center mx-auto mb-6 border border-sky-500/20">
+                <CheckCircle2 className="h-10 w-10 text-sky-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
+              <p className="text-slate-400 mb-8 leading-relaxed">
+                Thank you for reaching out. Our team will get back to you within 24 hours.
+              </p>
+              <Button
+                onClick={() => setIsSuccess(false)}
+                className="w-full h-14 bg-sky-500 hover:bg-sky-400 text-black font-bold rounded-2xl"
+              >
+                Close
+              </Button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* Background Decor */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-sky-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -46,7 +94,7 @@ export function Contact() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 items-start">
-          
+
           {/* Left: Info */}
           <div className="lg:col-span-2 space-y-8">
             <motion.div
@@ -106,7 +154,7 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-3"
           >
-            <form className="relative p-1 bg-gradient-to-br from-white/[0.08] to-transparent rounded-[2rem] overflow-hidden">
+            <form onSubmit={handleSubmit} className="relative p-1 bg-gradient-to-br from-white/[0.08] to-transparent rounded-[2rem] overflow-hidden">
               <div className="bg-[#050810]/95 backdrop-blur-2xl rounded-[1.8rem] p-8 sm:p-10">
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-2">
@@ -172,43 +220,21 @@ export function Contact() {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    onClick={(e) => handleSubmit(e, "whatsapp")}
-                    disabled={isSubmitting}
-                    className="flex-1 h-14 bg-[#25D366] hover:bg-[#20bd5c] text-black font-bold text-base rounded-xl gap-2 shadow-lg shadow-emerald-500/10 group active:scale-[0.98] transition-all"
-                  >
-                    {isSubmitting ? (
-                      <div className="h-5 w-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                    ) : (
-                      <>
-                        <Phone className="h-5 w-5 fill-black" />
-                        Chat on WhatsApp
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </Button>
-                  <Button
-                    onClick={(e) => handleSubmit(e, "email")}
-                    disabled={isSubmitting}
-                    variant="secondary"
-                    className="flex-1 h-14 bg-white/5 hover:bg-white/10 text-white font-bold text-base rounded-xl gap-2 border-white/10 active:scale-[0.98] transition-all"
-                  >
-                    <Mail className="h-5 w-5" />
-                    Send Email
-                  </Button>
-                </div>
-
-                {isSuccess && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                    <p className="text-sm text-emerald-400 font-medium">Message sent! We&apos;ll get back to you soon.</p>
-                  </motion.div>
-                )}
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-14 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-white font-extrabold text-base rounded-xl gap-2 shadow-xl shadow-sky-500/20 group active:scale-[0.98] transition-all"
+                >
+                  {isSubmitting ? (
+                    <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5" />
+                      Send Message
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </Button>
               </div>
             </form>
           </motion.div>
