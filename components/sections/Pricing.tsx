@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const DIALKARO_PLANS = [
   {
     name: "Starter",
-    price: "₹2,999",
+    price: "₹2,499",
     period: "per month",
     description: "Perfect for small sales teams starting out.",
     features: [
