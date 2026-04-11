@@ -8,25 +8,63 @@ import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 
+/* ─── Product-specific content config ─── */
+const PRODUCT_CONTENT = {
+  DialKaro: {
+    selectValue: "DialKaro (AI Sales Dialer)",
+    headline: "DialKaro",
+    tagline: "In Action",
+    description: "Discover how 250+ sales reps are saving 58 minutes every single day. Book a personalized 1-on-1 demo with our product specialists.",
+    benefits: [
+      { title: "30-Minute Value Session", desc: "No boring slides. We dive straight into the product features that matter to your team." },
+      { title: "Custom Workflow Map", desc: "We'll show you exactly how DialKaro fits into your current CRM and calling stack." },
+      { title: "Live ROI Calculation", desc: "See how much your business can save in monthly productivity costs." },
+    ],
+  },
+  BillKaro: {
+    selectValue: "BillKaro (WhatsApp Invoicing)",
+    headline: "BillKaro",
+    tagline: "In Action",
+    description: "See how Indian businesses are collecting payments 5× faster with WhatsApp invoicing. Book a personalized 1-on-1 demo with our product specialists.",
+    benefits: [
+      { title: "30-Minute Value Session", desc: "No boring slides. We show you the full invoicing flow — from creation to UPI collection." },
+      { title: "WhatsApp Integration Demo", desc: "See live how invoices are sent on WhatsApp with auto-reminders and UPI payment links." },
+      { title: "Live ROI Calculation", desc: "Calculate how much revenue you're losing to late payments — and how BillKaro fixes it." },
+    ],
+  },
+  default: {
+    selectValue: "DialKaro (AI Sales Dialer)",
+    headline: "CelerApps",
+    tagline: "Live",
+    description: "Explore our AI-powered business tools — DialKaro (Sales Dialer) and BillKaro (WhatsApp Invoicing). Book a free 1-on-1 demo with our product specialists.",
+    benefits: [
+      { title: "30-Minute Value Session", desc: "No boring slides. We dive into the product features that matter most to your business." },
+      { title: "Custom Workflow Map", desc: "We'll map our tools to your exact workflows — sales calling, invoicing, or both." },
+      { title: "Live ROI Calculation", desc: "See how much your business can save in monthly productivity and collection costs." },
+    ],
+  },
+} as const;
+
+type ProductKey = keyof typeof PRODUCT_CONTENT;
+
 function BookDemoContent() {
   const searchParams = useSearchParams();
+  const productParam = searchParams.get("product");
+  const productKey: ProductKey = (productParam === "DialKaro" || productParam === "BillKaro") ? productParam : "default";
+  const content = PRODUCT_CONTENT[productKey];
+
   const [form, setForm] = useState({
     name: "",
     company: "",
     email: "",
     phone: "",
-    product: "DialKaro (AI Sales Dialer)",
+    product: content.selectValue,
     message: "",
   });
 
   useEffect(() => {
-    const productParam = searchParams.get("product");
-    if (productParam === "DialKaro") {
-      setForm(prev => ({ ...prev, product: "DialKaro (AI Sales Dialer)" }));
-    } else if (productParam === "BillKaro") {
-      setForm(prev => ({ ...prev, product: "BillKaro (WhatsApp Invoicing)" }));
-    }
-  }, [searchParams]);
+    setForm(prev => ({ ...prev, product: content.selectValue }));
+  }, [content.selectValue]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -52,7 +90,7 @@ function BookDemoContent() {
           company: "",
           email: "",
           phone: "",
-          product: "DialKaro (AI Sales Dialer)",
+          product: content.selectValue,
           message: "",
         });
       } else {
@@ -127,19 +165,15 @@ function BookDemoContent() {
                   <MonitorPlay className="h-3 w-3 mr-1" /> Live Demo
                 </Badge>
                 <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                  See <span className="gradient-text">DialKaro</span> In <span className="text-emerald-400">Action</span>
+                  See <span className="gradient-text">{content.headline}</span> {content.tagline === "Live" ? "" : "In "}<span className="text-emerald-400">{content.tagline}</span>
                 </h1>
                 <p className="text-xl text-slate-400 leading-relaxed max-w-xl">
-                  Discover how 250+ sales reps are saving 58 minutes every single day. Book a personalized 1-on-1 demo with our product specialists.
+                  {content.description}
                 </p>
               </div>
 
               <div className="space-y-6">
-                {[
-                  { title: "30-Minute Value Session", desc: "No boring slides. We dive straight into the product features that matter to your team." },
-                  { title: "Custom Workflow Map", desc: "We'll show you exactly how DialKaro fits into your current CRM and calling stack." },
-                  { title: "Live ROI Calculation", desc: "See how much your business can save in monthly productivity costs." },
-                ].map((item, i) => (
+                {content.benefits.map((item, i) => (
                   <div key={i} className="flex gap-4 group">
                     <div className="flex-shrink-0 h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all">
                       <CheckCircle2 className="h-6 w-6 text-emerald-500" />
