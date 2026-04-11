@@ -58,7 +58,7 @@ function BookDemoContent() {
     company: "",
     email: "",
     phone: "",
-    product: content.selectValue,
+    product: content.selectValue as string,
     message: "",
   });
 
