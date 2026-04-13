@@ -117,7 +117,7 @@ export function Contact() {
             <div className="space-y-6 pt-4">
               {[
                 { icon: Mail, label: "Email Us", val: "hello@celerapps.com", href: "mailto:hello@celerapps.com" },
-                { icon: Phone, label: "WhatsApp/Call", val: "+91 94526-61608", href: "https://wa.me/919082573335" },
+                { icon: Phone, label: "WhatsApp/Call", val: "+91 90825-73335", href: "https://wa.me/919082573335" },
                 { icon: MapPin, label: "Location", val: "Lucknow, India 🇮🇳", href: null },
               ].map((item, i) => (
                 <motion.div
