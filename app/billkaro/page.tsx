@@ -7,10 +7,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Receipt, Mic, Banknote, Clock, Calculator, ShieldCheck, FileText, Smartphone } from "lucide-react";
 
-export const metadata = {
-  title: "BillKaro | WhatsApp-First Smart Invoicing by CelerApps",
-  description: "WhatsApp pe Bill Banao, Paisa Apne Aap Pao. Turn WhatsApp into your invoicing + collection machine.",
-};
 
 export default function BillKaroPage() {
   return (
