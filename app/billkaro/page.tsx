@@ -39,7 +39,7 @@ export default function BillKaroPage() {
             </Link>
           </Button>
           {/* <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
-            <a href="https://wa.me/919452661608?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20BillKaro." target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center">
+            <a href="https://wa.me/910000000000?text=Hi%20CelerApps!%20I%20want%20to%20book%20a%20demo%20for%20BillKaro." target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center">
               Book a Demo
             </a>
           </Button> */}
