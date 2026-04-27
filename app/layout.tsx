@@ -6,28 +6,28 @@ import "./globals.css";
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-geist-sans",
-  weight: ["300","400","500","600","700"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const siteUrl  = "https://celerapps.com";
+const siteUrl = "https://celerapps.com";
 const siteName = "CelerApps";
 const siteDesc = "Fast. Intelligent. Built for India. CelerApps builds AI-powered SaaS products — DialKaro (AI sales dialer) and BillKaro (WhatsApp invoicing) — that solve real Indian business problems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default:  `${siteName} — Fast. Intelligent. Built for India.`,
+    default: `${siteName} — Fast. Intelligent. Built for India.`,
     template: `%s | ${siteName}`,
   },
   description: siteDesc,
   keywords: [
-    "CelerApps","DialKaro","BillKaro","Indian SaaS","WhatsApp invoicing",
-    "AI dialer","sales automation India","SME software India","WhatsApp business tools",
-    "auto dialer India","invoice app India","GST invoice WhatsApp",
+    "CelerApps", "DialKaro", "BillKaro", "Indian SaaS", "WhatsApp invoicing",
+    "AI dialer", "sales automation India", "SME software India", "WhatsApp business tools",
+    "auto dialer India", "invoice app India", "GST invoice WhatsApp",
   ],
-  authors:   [{ name: siteName, url: siteUrl }],
-  creator:   siteName,
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
   publisher: siteName,
   openGraph: {
     title: "CelerApps - AI-Powered Business Apps",
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
     type: "website" as const,
   },
   twitter: {
-    card:        "summary_large_image",
-    title:       `${siteName} — Fast. Intelligent. Built for India.`,
+    card: "summary_large_image",
+    title: `${siteName} — Fast. Intelligent. Built for India.`,
     description: siteDesc,
-    images:      ["/og.png"],
-    creator:     "@celerapps",
+    images: ["/og.png"],
+    creator: "@celerapps",
   },
   robots: {
     index: true, follow: true,
@@ -52,39 +52,39 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor:  "#050810",
+  themeColor: "#050810",
   colorScheme: "dark",
-  width:       "device-width",
+  width: "device-width",
   initialScale: 1,
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type":    "Organization",
-  name:        siteName,
-  url:         siteUrl,
-  logo:        `${siteUrl}/logo.png`,
+  "@type": "Organization",
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/logo.png`,
   description: siteDesc,
   foundingLocation: "India",
-  sameAs: ["https://twitter.com/celerapps","https://linkedin.com/company/celerapps"],
+  sameAs: ["https://twitter.com/celerapps", "https://linkedin.com/company/celerappsai"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name:    "CelerApps Product Suite",
+    name: "CelerApps Product Suite",
     itemListElement: [
       {
         "@type": "SoftwareApplication",
-        name:    "DialKaro",
+        name: "DialKaro",
         applicationCategory: "BusinessApplication",
         description: "AI-powered auto-dialer and WhatsApp calling tool for Indian sales teams",
-        url:  `${siteUrl}/dialkaro`,
+        url: `${siteUrl}/dialkaro`,
         offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
       },
       {
         "@type": "SoftwareApplication",
-        name:    "BillKaro",
+        name: "BillKaro",
         applicationCategory: "BusinessApplication",
         description: "WhatsApp-first smart invoicing and collections platform for Indian SMBs",
-        url:  `${siteUrl}/billkaro`,
+        url: `${siteUrl}/billkaro`,
         offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
       },
     ],

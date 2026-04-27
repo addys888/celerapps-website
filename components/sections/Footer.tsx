@@ -6,29 +6,29 @@ import { Zap, Phone, FileText, Twitter, Linkedin, Github, Mail, MapPin } from "l
 import Image from "next/image";
 
 const PRODUCTS = [
-  { name:"DialKaro", href:"/dialkaro", icon:Phone, desc:"AI Sales Dialer" },
-  { name:"BillKaro", href:"/billkaro", icon:FileText, desc:"Smart Invoicing" },
+  { name: "DialKaro", href: "/dialkaro", icon: Phone, desc: "AI Sales Dialer" },
+  { name: "BillKaro", href: "/billkaro", icon: FileText, desc: "Smart Invoicing" },
 ];
 
 const QUICK = [
-  ["Solutions",  "#why"       ],
-  ["Pricing",    "#pricing"   ],
-  ["Contact Us", "/contact"   ],
-  ["Blog",       "/blog"      ],
-  ["Changelog",  "/changelog" ],
+  ["Solutions", "#why"],
+  ["Pricing", "#pricing"],
+  ["Contact Us", "/contact"],
+  ["Blog", "/blog"],
+  ["Changelog", "/changelog"],
 ];
 
 const LEGAL = [
-  ["Privacy Policy",  "/privacy"  ],
-  ["Terms of Use",    "/terms"    ],
-  ["Refund Policy",   "/refunds"  ],
+  ["Privacy Policy", "/privacy"],
+  ["Terms of Use", "/terms"],
+  ["Refund Policy", "/refunds"],
 ];
 
 const SOCIAL = [
-  { icon: Twitter,  href: "https://twitter.com/celerapps",            label: "Twitter"  },
-  { icon: Linkedin, href: "https://linkedin.com/company/celerapps",   label: "LinkedIn" },
-  { icon: Github,   href: "https://github.com/celerapps",             label: "GitHub"   },
-  { icon: Mail,     href: "mailto:hello@celerapps.com",                label: "Email"    },
+  //{ icon: Twitter,  href: "https://twitter.com/celerapps",            label: "Twitter"  },
+  { icon: Linkedin, href: "https://linkedin.com/company/celerappsai", label: "LinkedIn" },
+  //{ icon: Github,   href: "https://github.com/celerapps",             label: "GitHub"   },
+  { icon: Mail, href: "mailto:hello@celerapps.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -46,11 +46,11 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2">
             {/* ── Logo ── */}
             <Link href="/" className="flex items-center gap-2.5 group inline-flex mb-6">
-              <Image 
-                src="/logo.png" 
-                alt="CelerApps Logo" 
-                width={32} 
-                height={32} 
+              <Image
+                src="/logo.png"
+                alt="CelerApps Logo"
+                width={32}
+                height={32}
                 className="rounded-lg object-contain group-hover:opacity-80 transition-opacity"
               />
               <span className="text-[17px] font-semibold tracking-tight">
@@ -111,9 +111,9 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">Products</p>
             <ul className="space-y-2.5">
               {[
-                ["DialKaro",        "/dialkaro"         ],
-                ["BillKaro",        "/billkaro"         ],
-                ["Integrations",    "/integrations"     ],
+                ["DialKaro", "/dialkaro"],
+                ["BillKaro", "/billkaro"],
+                ["Integrations", "/integrations"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link href={href} className="text-sm text-slate-400 hover:text-white transition-colors">{label}</Link>
@@ -152,10 +152,10 @@ export function Footer() {
             © 2025 - {new Date().getFullYear()} CelerApps Technologies Pvt. Ltd. All rights reserved.
           </p>
           <motion.p
-            initial={{ opacity:0 }}
-            whileInView={{ opacity:1 }}
-            viewport={{ once:true }}
-            transition={{ duration:1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
             className="text-xs text-slate-600 flex items-center gap-1"
           >
             Made with{" "}
